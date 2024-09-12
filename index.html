@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Perfil</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <!--  <ul class="container d-flex w-50 nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Vehiculos</a></li>
+                  <li><a class="dropdown-item" href="#">Tecnologia</a></li>
+                </ul>
+              </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contacto</button>
+            </li>
+          </ul> -->
+        <div class="border-bottom">
+            <nav class="navbar navbar-expand-md bg-light sticky-top border-bottom">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                        aria-controls="offcanvas" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand d-md-none" href="#">
+                        Tienda
+                    </a>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas"
+                        aria-labelledby="offcanvasLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasLabel">Menu</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="container justify-content-between navbar-nav">
+                                <li class="nav-item"><a class="nav-link" href="#">
+                                        <span class="navbar-brand mb-0 h1">Tienda</span>
+                                    </a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                        aria-expanded="false">Categorias</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Vehiculos</a></li>
+                                        <li><a class="dropdown-item" href="#">Tecnologia</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="slides-container" id="video-banner">
+            <div class="slide" id="slide-1">
+                <div class="centered">
+                    <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+                    <div class="overlay"></div>
+
+                    <!-- The HTML5 video element that will create the background video on the header -->
+                    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                        <source src="assets/images/5585939-hd_1920_1080_25fps.mp4" type="video/mp4">
+                    </video>
+
+                    <!-- The header content -->
+                    <div class="container h-100">
+                        <div class="d-flex h-100 text-center align-items-center">
+                            <div class="w-100 text-white">
+                                <h1 class="display-3 fw-bold">Tienda</h1>
+                                <p class="lead mb-0">---</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mouse_scroll">
+                        <div class="mouse">
+                            <div class="wheel"></div>
+                        </div>
+                        <div>
+                            <span class="m_scroll_arrows uno"></span>
+                            <span class="m_scroll_arrows dos"></span>
+                            <span class="m_scroll_arrows tres"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" id="slide-3">
+                <div class="centered">
+                    <h1>Use mouse wheel</h1>
+
+                    <p>No, really. Try to scroll up and down with the mouse wheel to switch between slides.</p>
+                </div>
+            </div>
+            <div class="slide" id="slide-4">
+                <div class="centered">
+                    <h1>... Or use keyboard arrows</h1>
+                    <p>You go to previous and next slide, using up and down keyboard arrows.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
