@@ -197,7 +197,7 @@ body {
 @media (max-width: 768px) {
     .slide .centered {
         width: 80%; /* Increase width for smaller screens */
-        margin: 20% auto 0;
+        margin: 30% auto 0;
     }
 
     .slide .centered p {
