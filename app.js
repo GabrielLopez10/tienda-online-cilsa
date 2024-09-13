@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event Listener for mouse scroll icon to scroll to slide-3
   document.querySelector(".mouse_scroll").addEventListener("click", () => {
-    document.getElementById("slide-3").scrollIntoView({
+    document.getElementById("slide-2").scrollIntoView({
       behavior: "smooth",
     });
   });
@@ -32,21 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const windowElem = window;
   const documentElem = document;
   const navButtons = document.querySelectorAll("nav a[href^='#']");
-  /*   const navGoPrev = document.querySelector(".go-prev");
-  const navGoNext = document.querySelector(".go-next"); */
+  const navGoPrev = document.querySelector(".go-prev");
+  const navGoNext = document.querySelector(".go-next");
   const slidesContainer = document.querySelector(".slides-container");
   const slides = document.querySelectorAll(".slide");
   let currentSlide = slides[0];
   let isAnimating = false;
   let pageHeight = windowElem.innerHeight;
 
-  /*   const keyCodes = {
+    const keyCodes = {
       UP: 38,
       DOWN: 40
-  }; */
-
-  let touchStartY = 0;
-  let touchEndY = 0;
+  };
 
   goToSlide(currentSlide);
 
@@ -58,34 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", onNavButtonClick);
   });
 
-  documentElem.addEventListener("touchstart", onTouchStart, false);
-  documentElem.addEventListener("touchmove", onTouchMove, false);
-  documentElem.addEventListener("touchend", onTouchEnd, false);
-
-  function onTouchStart(event) {
-    touchStartY = event.changedTouches[0].screenY;
-  }
-
-  function onTouchMove(event) {
-    touchEndY = event.changedTouches[0].screenY;
-  }
-
-  function onTouchEnd() {
-    const deltaY = touchStartY - touchEndY;
-    if (deltaY > 50) {
-      goToNextSlide();
-    } else if (deltaY < -50) {
-      goToPrevSlide();
-    }
-  }
-
-  /*   if (navGoPrev) {
+  if (navGoPrev) {
       navGoPrev.addEventListener("click", goToPrevSlide);
   }
 
   if (navGoNext) {
       navGoNext.addEventListener("click", goToNextSlide);
-  } */
+  } 
 
   function onNavButtonClick(event) {
     const button = event.currentTarget;
