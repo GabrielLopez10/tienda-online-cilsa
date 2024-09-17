@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="border-bottom">
-            <nav class="navbar navbar-expand-md bg-light border-bottom fixed-top">
+            <nav class="navbar navbar-expand-md bg-light border-bottom sticky">
                 <div class="container">
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
                         aria-controls="offcanvas" aria-label="Toggle navigation">
@@ -42,7 +42,8 @@
                                         aria-expanded="false">Categorias</a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="productos.html#vehiculos">Vehiculos</a></li>
-                                        <li><a class="dropdown-item" href="productos.html#tecnologia">Tecnologia</a></li>
+                                        <li><a class="dropdown-item" href="productos.html#tecnologia">Tecnologia</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
@@ -85,37 +86,28 @@
                 </div>
             </div>
             <div class="w-100 h-auto min-vh-100 overflow-hidden position-relative" id="slide-2">
-                <h1 class="text-center text-uppercase py-5 fw-bold">Productos Destacados</h1>
+                <h1 class="text-center text-uppercase py-5 fw-bold" id="productos-destacados">Productos Destacados</h1>
                 <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 g-5 mt-1 mb-5">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-1 mb-5">
                         <div class="col">
-                            <div class="card">
-                                <img src="assets/images/1651_4_z_532x399.jpg"
-                                    class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Canon EOS 1500D</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing exercitationem elit.</p>
+                            <div class="card h-100">
+                                <a href="productos.html#tecnologia"><img src="assets/images/1651_4_z_532x399.jpg"
+                                        class="card-img-top img-thumbnail object-fit-scale"></a>
+                                <div class="card-body row align-items-end align-items-end">
+                                    <h5 class="card-title">Canon EOS Rebel T7 / 1500D (18-55 mm)</h5>
                                     <div class="mb-2">
                                         <span
-                                            class="font-bold text-decoration-line-through"><strong>$99.00</strong></span>
-                                        <span class="text-body-secondary">$59.99</span>
+                                            class="font-bold text-decoration-line-through"><strong>$1.285.000</strong></span>
+                                        <span class="text-body-secondary">$1.235.000</span>
                                     </div>
                                     <div class="card-footer">
                                         <div class="row text-center">
-                                            <div class="col-md-6 mb-2">
+                                            <div class="col mb-2">
                                                 <span class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa-regular fa-star" aria-hidden="true"></span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button type="button" class="btn btn-primary btn-sm btn-block"
-                                                    id="comprar-1" onclick="window.location.href='productos.html'">
-                                                    <span class="glyphicon glyphicon-shopping-cart"
-                                                        aria-hidden="true"></span>Comprar
-                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -123,33 +115,25 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card">
-                                <img src="https://www.digi-zoom.com.ar/images/productos/1651_1_z.jpg"
-                                    class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Canon EOS 1500D</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing exercitationem elit.</p>
+                            <div class="card h-100">
+                                <a href="productos.html#tecnologia"><img
+                                        src="assets/images/Notebook-Lenovo-V14-Business-Black-Aslan-Store-1_cropped.webp"
+                                        class="card-img-top img-thumbnail object-fit-scale"></a>
+                                <div class="card-body row align-items-end align-items-end">
+                                    <h5 class="card-title">Lenovo AMD Ryzen5-7520U 256gb 8gb 14" Win11 Pro</h5>
                                     <div class="mb-2">
                                         <span
-                                            class="font-bold text-decoration-line-through"><strong>$99.00</strong></span>
-                                        <span class="text-body-secondary">$59.99</span>
+                                            class="font-bold text-decoration-line-through"><strong>$1.143.999</strong></span>
+                                        <span class="text-body-secondary">$1.093.999</span>
                                     </div>
                                     <div class="card-footer">
                                         <div class="row text-center">
-                                            <div class="col-md-6 mb-2">
+                                            <div class="col mb-2">
                                                 <span class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa-regular fa-star" aria-hidden="true"></span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button type="button" class="btn btn-primary btn-sm btn-block"
-                                                    id="comprar-1" onclick="window.location.href='productos.html'">
-                                                    <span class="glyphicon glyphicon-shopping-cart"
-                                                        aria-hidden="true"></span>Comprar
-                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -157,33 +141,24 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card">
-                                <img src="https://www.digi-zoom.com.ar/images/productos/1651_1_z.jpg"
-                                    class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Canon EOS 1500D</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing exercitationem elit.</p>
+                            <div class="card h-100">
+                                <a href="productos.html#vehiculos"><img src="assets/images/ram1.jpg"
+                                        class="card-img-top img-thumbnail object-fit-scale"></a>
+                                <div class="card-body row align-items-end align-items-end">
+                                    <h5 class="card-title">Ram 1500 5.7 Dc 4×4 Laramie Night Edition</h5>
                                     <div class="mb-2">
                                         <span
-                                            class="font-bold text-decoration-line-through"><strong>$99.00</strong></span>
-                                        <span class="text-body-secondary">$59.99</span>
+                                            class="font-bold text-decoration-line-through"><strong>$56.900.000</strong></span>
+                                        <span class="text-body-secondary">$55.870.000</span>
                                     </div>
                                     <div class="card-footer">
                                         <div class="row text-center">
-                                            <div class="col-md-6 mb-2">
+                                            <div class="col mb-2">
                                                 <span class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa-regular fa-star" aria-hidden="true"></span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button type="button" class="btn btn-primary btn-sm btn-block"
-                                                    id="comprar-1" onclick="window.location.href='productos.html'">
-                                                    <span class="glyphicon glyphicon-shopping-cart"
-                                                        aria-hidden="true"></span>Comprar
-                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -191,33 +166,24 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card">
-                                <img src="https://www.digi-zoom.com.ar/images/productos/1651_1_z.jpg"
-                                    class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Canon EOS 1500D</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing exercitationem elit.</p>
+                            <div class="card h-100">
+                                <a href="productos.html#tecnologia"><img src="assets/images/playstationimg2.png"
+                                        class="card-img-top img-thumbnail object-fit-scale"></a>
+                                <div class="card-body row align-items-end align-items-end">
+                                    <h5 class="card-title">Playstation 5 Sony Standard Edition</h5>
                                     <div class="mb-2">
                                         <span
-                                            class="font-bold text-decoration-line-through"><strong>$99.00</strong></span>
-                                        <span class="text-body-secondary">$59.99</span>
+                                            class="font-bold text-decoration-line-through"><strong>$1.714.999</strong></span>
+                                        <span class="text-body-secondary">$1.154.999</span>
                                     </div>
                                     <div class="card-footer">
                                         <div class="row text-center">
-                                            <div class="col-md-6 mb-2">
+                                            <div class="col mb-2">
                                                 <span class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa-regular fa-star" aria-hidden="true"></span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button type="button" class="btn btn-primary btn-sm btn-block"
-                                                    id="comprar-1" onclick="window.location.href='productos.html'">
-                                                    <span class="glyphicon glyphicon-shopping-cart"
-                                                        aria-hidden="true"></span>Comprar
-                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -253,7 +219,8 @@
                 <h5>Secciones</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="in" class="nav-link p-0 text-body-secondary">Home</a></li>
-                    <li class="nav-item mb-2"><a href="productos.html" class="nav-link p-0 text-body-secondary">Categorias</a>
+                    <li class="nav-item mb-2"><a href="productos.html"
+                            class="nav-link p-0 text-body-secondary">Categorias</a>
                     </li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contacto</a>
                     </li>
@@ -308,7 +275,9 @@
             </div>
         </div>
     </div>
-
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

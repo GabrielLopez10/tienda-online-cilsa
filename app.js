@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const offcanvas = document.getElementById("offcanvas");
   const dropdownMenu = document.querySelector(".dropdown-menu");
   const mouseScroll = document.querySelector(".mouse_scroll");
+  let mybutton = document.getElementById("btn-back-to-top");
 
   function toggleDropdown() {
     if (window.innerWidth >= 768) {
@@ -16,6 +17,28 @@ document.addEventListener("DOMContentLoaded", () => {
       dropdown.classList.add("no-arrow");
     }
   }
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  mybutton.addEventListener("click", backToTop);
 
   toggleDropdown();
   window.addEventListener("resize", toggleDropdown);
