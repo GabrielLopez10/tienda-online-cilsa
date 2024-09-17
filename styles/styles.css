@@ -48,6 +48,7 @@ body {
 
 .mouse_scroll {
     cursor: pointer;
+    margin-bottom: 100px;
 }
 
 .mouse {
@@ -158,6 +159,12 @@ body {
     font-size: 50px;
     background: linear-gradient(90deg, rgba(48,67,161,1) 25%, rgba(9,9,119,1) 50%, rgba(9,9,119,1) 75%, rgba(48,67,161,1) 100%);
     color:#e5e5e5;
+}
+
+@media (max-width:480px) {
+    #productos-destacados {
+        font-size: 40px;
+    }
 }
 
 img{
