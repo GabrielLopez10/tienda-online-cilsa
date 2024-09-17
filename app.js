@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dropdown.classList.remove("no-arrow");
     } else {
       dropdown.removeAttribute("data-bs-toggle");
-      dropdown.href = "../pages/productos.html";
+      dropdown.href = "productos.html";
       dropdownMenu.classList.add("d-none");
       dropdown.classList.add("no-arrow");
     }
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     false
   );
 
-  fetch("../pages/productosModal.html")
+  fetch("productosModal.html")
     .then((response) => response.text())
     .then((data) => {
       document.querySelector("#modals-container").innerHTML = data;
