@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div class="modal fade" id="productModal1" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="single_product">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-2 order-2">
+                                    <div class="gallery">
+                                        <img src="assets/images/1651_4_z_532x399.jpg" alt="Product 1"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this, 'mainImage1')">
+                                        <img src="assets/images/1651_3_z_532x399.jpg" alt="Product 2"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this, 'mainImage1')">
+                                        <img src="assets/images/1651_6_z_532x399.jpg" alt="Product 3"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this, 'mainImage1')">
+                                    </div>
+                                </div>
+                                <div class="col order-lg-2">
+                                    <div class="image-selected">
+                                        <img src="assets/images/1651_4_z_532x399.jpg" alt="Main Product Image"
+                                            class="img-fluid zoom-image" id="mainImage1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-3">
+                                    <div class="product_description">
+                                        <nav>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+                                                <li class="breadcrumb-item active">Tecnologia</li>
+                                            </ol>
+                                        </nav>
+                                        <div class="product_name">
+                                            Canon EOS Rebel T7 / 1500D (18-55 mm)</div>
+                                        <div class="product-rating">
+                                            <span class="badge badge-success"><i class="fa fa-star"></i> 4.5 Star</span>
+                                            <span class="rating-review">35 Valoraciones & 45 Reseñas</span>
+                                        </div>
+                                        <div>
+                                            <span class="product_price">$1.235.000</span>
+                                            <div class="product_discount">
+                                                <span class='text-decoration-line-through'>$1.285.000</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="product_saved">Ahorra:</span>
+                                            <span style='color:black'>$ 50,000</span>
+                                        </div>
+                                        <hr class="singleline">
+                                        <div class="order_info d-flex flex-row">
+                                            <form action="#">
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="input-group quantity-selector">
+                                                    <span>Cantidad: </span>
+                                                    <input type="number" id="inputQuantitySelector"
+                                                        class="form-control rounded" aria-live="polite"
+                                                        data-bs-step="counter" name="cantidad" title="cantidad"
+                                                        value="0" min="0" max="10" step="1" data-bs-round="0"
+                                                        aria-label="Selector Cantidad">
+                                                    <span>(10 unidades) </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                    al carrito
+                                                </button>
+                                                <button type="button" class="btn btn-success shop-button">Comprar
+                                                    ahora</button>
+                                                <button class="product_fav"><i class="fas fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Características del producto</span>
+                                </div>
+                                <div class="col-md-6"> <a href="#" data-abc="true"> <span
+                                            class="ml-auto view-all"></span> </a> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="col-md-12 table table-striped">
+                                        <tbody>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Fabricante:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Canon</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Linea:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>EOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Modelo
+                                                        alfanumérico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>1500D</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Color:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Negro</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de sensor
+                                                        óptico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>CMOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de cámara
+                                                        :</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>DSLR</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Descripción</span>
+                                </div>
+                            </div>
+                            <div class="row mx-3">
+                                <div class="col-md-12">
+                                    <p>La marca japonesa Canon combina calidad y rendimiento en sus productos. No
+                                        importa si recién comenzás en el mundo de la fotografía o si querés mejorar tu
+                                        equipo, Canon hará que te enamores de la fotografía.</p>
+                                    <p>Una extensión de tu visión<br>
+                                        El visor réflex permite obtener una perspectiva realista y tomar fotografías
+                                        increíbles con resultados más exactos gracias a la posibilidad de intercambiar
+                                        objetivos. Además, por sus múltiples funcionalidades, podés dar rienda suelta a
+                                        tu creatividad y controlar diferentes parámetros para tomar la fotografía
+                                        perfecta.</p>
+                                    <p>Fotos profesionales de noche y de día<br>
+                                        Con el sensor CMOS la digitalización de las imágenes se realiza de manera
+                                        interna, con gran rapidez y mediante transmisores más pequeños. Además, cuenta
+                                        con una gran ventaja, el sensor es más sensible a la luz por lo que en
+                                        condiciones de baja iluminación, obtenés excelentes tomas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal2" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="single_product">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-2 order-2">
+                                    <div class="gallery">
+                                        <img src="assets/images/Notebook-Lenovo-V14-Business-Black-Aslan-Store-1_cropped.webp"
+                                            alt="Product 1" class="img-thumbnail gallery-img"
+                                            onclick="changeImage(this, 'mainImage2')">
+                                        <img src="assets/images/Notebook-Lenovo-V14-Business-Black-Aslan-Store-3_532x399.webp"
+                                            alt="Product 2" class="img-thumbnail gallery-img"
+                                            onclick="changeImage(this, 'mainImage2')">
+                                        <img src="assets/images/Notebook-Lenovo-V14-Business-Black-Aslan-Store-4_532x399.webp"
+                                            alt="Product 3" class="img-thumbnail gallery-img"
+                                            onclick="changeImage(this, 'mainImage2')">
+                                        <img src="assets/images/Notebook-Lenovo-V14-Business-Black-Aslan-Store-6_532x399.webp"
+                                            alt="Product 4" class="img-thumbnail gallery-img"
+                                            onclick="changeImage(this, 'mainImage2')">
+                                    </div>
+                                </div>
+                                <div class="col order-lg-2">
+                                    <div class="image-selected">
+                                        <img src="assets/images/Notebook-Lenovo-V14-Business-Black-Aslan-Store-1_cropped.webp"
+                                            alt="Main Product Image" class="img-fluid zoom-image" id="mainImage2">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-3">
+                                    <div class="product_description">
+                                        <nav>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+                                                <li class="breadcrumb-item active">Tecnologia</li>
+                                            </ol>
+                                        </nav>
+                                        <div class="product_name">
+                                            Lenovo AMD Ryzen5-7520U 256gb 8gb 14" Win11 Pro</div>
+                                        <div class="product-rating">
+                                            <span class="badge badge-success"><i class="fa fa-star"></i> 4.6 Star</span>
+                                            <span class="rating-review">105 Valoraciones & 78 Reseñas</span>
+                                        </div>
+                                        <div>
+                                            <span class="product_price">$1.093.999</span>
+                                            <div class="product_discount">
+                                                <span class='text-decoration-line-through'>$1.143.999</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="product_saved">Ahorra:</span>
+                                            <span style='color:black'>$ 50,000</span>
+                                        </div>
+                                        <hr class="singleline">
+                                        <div class="order_info d-flex flex-row">
+                                            <form action="#">
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="input-group quantity-selector">
+                                                    <span>Cantidad: </span>
+                                                    <input type="number" id="inputQuantitySelector"
+                                                        class="form-control rounded" aria-live="polite"
+                                                        data-bs-step="counter" name="cantidad" title="cantidad"
+                                                        value="0" min="0" max="20" step="1" data-bs-round="0"
+                                                        aria-label="Selector Cantidad">
+                                                    <span>(20 unidades) </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                    al carrito
+                                                </button>
+                                                <button type="button" class="btn btn-success shop-button">Comprar
+                                                    ahora</button>
+                                                <button class="product_fav"><i class="fas fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Características del producto</span>
+                                </div>
+                                <div class="col-md-6"> <a href="#" data-abc="true"> <span
+                                            class="ml-auto view-all"></span> </a> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="col-md-12 table table-striped">
+                                        <tbody>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Fabricante:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Lenovo</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Modelo:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>V14 G4 AMN</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Color:</span></td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Negro</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Sistema
+                                                        Operativo:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Windows 11 Professional 64bit pre-instalado.</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Procesador:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>AMD Ryzen 5 7520U 2.8Ghz (4MB Caché, hasta 4.3Ghz).</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Memoria RAM:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>8GB Soldered LPDDR5-5500</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Descripción</span>
+                                </div>
+                            </div>
+                            <div class="row mx-3">
+                                <div class="col-md-12">
+                                    <p>Notebook Lenovo AMD Ryzen5-7520U 256gb 8gb 14" Win11 Pro
+                                    </p>
+                                    <p>Pantalla<br>
+                                        Diagonal de la pantalla 14"<br>
+                                        Resolución de la pantalla 1920 x 1080 Pixeles<br>
+                                        Tipo HD: FHD</p>
+                                    <p>Procesador<br>
+                                        AMD Ryzen 5<br>
+                                        Modelo del procesador 7520U<br>
+                                        Frecuencia del procesador 2,8 GHz<br>
+                                        Número de núcleos de procesador: 4</p>
+                                    <p>Memoria<br>
+                                        Memoria interna: 8 GB<br>
+                                        Tipo de memoria interna LPDDR5-SDRAM<br>
+                                        Velocidad de memoria del reloj 4800 MHz
+                                    </p>
+                                    <p>Medios de almacenaje
+                                        <br>
+                                        Capacidad total de almacenaje: 256 GB SSD
+                                    </p>
+                                    <p>
+                                        Peso y dimensiones<br>
+                                        Ancho: 324,2 mm<br>
+                                        Profundidad: 215,2 mm<br>
+                                        Altura: 19,9 mm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal3" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="single_product">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-2 order-2">
+                                    <div class="gallery">
+                                        <img src="assets/images/ps5-product-thumbnail-01-en-14sep21.webp"
+                                            alt="Product 1" class="img-thumbnail gallery-img"
+                                            onclick="changeImage(this, 'mainImage3')">
+                                        <img src="assets/images/playstationimg2.png" alt="Product 2"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this, 'mainImage3')">
+                                    </div>
+                                </div>
+                                <div class="col order-lg-2">
+                                    <div class="image-selected">
+                                        <img src="assets/images/ps5-product-thumbnail-01-en-14sep21.webp"
+                                            alt="Main Product Image" class="img-fluid zoom-image" id="mainImage3">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-3">
+                                    <div class="product_description">
+                                        <nav>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+                                                <li class="breadcrumb-item active">Tecnologia</li>
+                                            </ol>
+                                        </nav>
+                                        <div class="product_name">
+                                            Playstation 5 Sony Ps5 Standard Edition</div>
+                                        <div class="product-rating">
+                                            <span class="badge badge-success"><i class="fa fa-star"></i> 4.4 Star</span>
+                                            <span class="rating-review">405 Valoraciones & 276 Reseñas</span>
+                                        </div>
+                                        <div>
+                                            <span class="product_price">$1.154.999</span>
+                                            <div class="product_discount">
+                                                <span class='text-decoration-line-through'>$1.714.999</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="product_saved">Ahorra:</span>
+                                            <span style='color:black'>$ 560,000</span>
+                                        </div>
+                                        <hr class="singleline">
+                                        <div class="order_info d-flex flex-row">
+                                            <form action="#">
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="input-group quantity-selector">
+                                                    <span>Cantidad: </span>
+                                                    <input type="number" id="inputQuantitySelector"
+                                                        class="form-control rounded" aria-live="polite"
+                                                        data-bs-step="counter" name="cantidad" title="cantidad"
+                                                        value="0" min="0" max="100" step="1" data-bs-round="0"
+                                                        aria-label="Selector Cantidad">
+                                                    <span>(100 unidades) </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                    al carrito
+                                                </button>
+                                                <button type="button" class="btn btn-success shop-button">Comprar
+                                                    ahora</button>
+                                                <button class="product_fav"><i class="fas fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Características del producto</span>
+                                </div>
+                                <div class="col-md-6"> <a href="#" data-abc="true"> <span
+                                            class="ml-auto view-all"></span> </a> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="col-md-12 table table-striped">
+                                        <tbody>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Fabricante:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Sony</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Linea:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>PlayStation</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">CPU:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>x86-64-AMD Ryzen™ Zen 2, 8 nucleos/16 hilos frecuencia
+                                                            variable, hasta 3.5GHz</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Memoria:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>GDDR6 16GB ancho de banda de 448GB/s
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Formato de
+                                                        disco:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Ultra HD Blu-Ray, hasta 100GB/disco
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Audio:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Tempest 3D AudioTech
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">GPU:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Motor de gráficos basado en AMD Radeon ™ RDNA 2 Aceleración
+                                                            Ray Tracing Frecuencia variable, hasta 2.23 GHz (10.3
+                                                            teraflops)
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">SSD:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>825GB ancho de banda 5.5GB/s (raw)
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Salida de
+                                                        Video:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Soporte TVs 4K 120H, Tvs 8K, VRR (Específicamente para HDMI
+                                                            versión 2.1)
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Color:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Blanco
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Descripción</span>
+                                </div>
+                            </div>
+                            <div class="row mx-3">
+                                <div class="col-md-12">
+                                    <p>Experimenta una velocidad sorprendente de carga con una inmersión más intensa
+                                        gracias a la SSD de ultra alta velocidad, compatible con retrolimentación
+                                        háptica, gatillos adaptables y audio 3D, y una generación totalmente nueva de
+                                        increíbles juegos de PlayStation®.</p>
+                                    <p>Velocidad sorprendente: Disfruta de la potencia de una CPU, una GPU y una SSD
+                                        personalizadas con E/S integradas que redefinirán lo que una consola
+                                        PlayStation® puede hacer.</p>
+                                    <p>Inmersión impresionante :Descubre una experiencia de juego más inmersiva con
+                                        soporte para retroalimentación háptica, gatillos adaptables y tecnología de
+                                        audio en 3D. Juegos asombrosos: Maravíllate con asombrosos gráficos y descubre
+                                        las nuevas funciones de PS5™.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal4" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="single_product">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-2 order-2">
+                                    <div class="gallery">
+                                        <img src="assets/images/samsung.jpg" alt="Product 1"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this, 'mainImage4')">
+                                        <img src="assets/images/samsung2.webp" alt="Product 2"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this, 'mainImage4')">
+                                        <img src="assets/images/samsung3.webp" alt="Product 3"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this, 'mainImage4')">
+                                    </div>
+                                </div>
+                                <div class="col order-lg-2">
+                                    <div class="image-selected">
+                                        <img src="assets/images/samsung.jpg" alt="Main Product Image"
+                                            class="img-fluid zoom-image" id="mainImage4">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-3">
+                                    <div class="product_description">
+                                        <nav>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+                                                <li class="breadcrumb-item active">Tecnologia</li>
+                                            </ol>
+                                        </nav>
+                                        <div class="product_name">
+                                            Samsung Galaxy S21 Ultra 5g 256 Gb Phantom Black 12 Gb Ram</div>
+                                        <div class="product-rating">
+                                            <span class="badge badge-success"><i class="fa fa-star"></i> 4.2 Star</span>
+                                            <span class="rating-review">356 Valoraciones & 148 Reseñas</span>
+                                        </div>
+                                        <div>
+                                            <span class="product_price">$1.151.749</span>
+                                            <div class="product_discount">
+                                                <span class='text-decoration-line-through'>$1.351.749</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="product_saved">Ahorra:</span>
+                                            <span style='color:black'>$200,000</span>
+                                        </div>
+                                        <hr class="singleline">
+                                        <div class="order_info d-flex flex-row">
+                                            <form action="#">
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="input-group quantity-selector">
+                                                    <span>Cantidad: </span>
+                                                    <input type="number" id="inputQuantitySelector"
+                                                        class="form-control rounded" aria-live="polite"
+                                                        data-bs-step="counter" name="cantidad" title="cantidad"
+                                                        value="0" min="0" max="50" step="1" data-bs-round="0"
+                                                        aria-label="Selector Cantidad">
+                                                    <span>(50 unidades) </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                    al carrito
+                                                </button>
+                                                <button type="button" class="btn btn-success shop-button">Comprar
+                                                    ahora</button>
+                                                <button class="product_fav"><i class="fas fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Características del producto</span>
+                                </div>
+                                <div class="col-md-6"> <a href="#" data-abc="true"> <span
+                                            class="ml-auto view-all"></span> </a> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="col-md-12 table table-striped">
+                                        <tbody>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Fabricante:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Samsung</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Linea:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Galaxy S</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Modelo:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>S21 Ultra 5G</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Color:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Negro</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Nombre del
+                                                        sistema</span>
+                                                    <span class="p_specification">operativo:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Android</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Versión original
+                                                        del</span>
+                                                    <span class="p_specification">sistema operativo:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>11</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Modelo del procesador
+                                                        :</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Exynos 2100
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Velocidad del
+                                                        procesador:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>2.9 GHz
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tamaño de la
+                                                        pantalla:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>6.8 "
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Memoria
+                                                        interna:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>256 GB</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Descripción</span>
+                                </div>
+                            </div>
+                            <div class="row mx-3">
+                                <div class="col-md-12">
+                                    <p>Presentamos el nuevo Galaxy S21 Ultra 5G. Diseñado con una exclusiva cámara que
+                                        revolucionará el mundo de la fotografía. Ahora puede grabar en 8K y sacar fotos
+                                        inéditas a la vez. Además, el nuevo Galaxy incorpora un chip más rápido y
+                                        potente, un cristal más fuerte, 5G y batería para todo el día.</p>
+                                    <p>Diseño revolucionario
+                                        <br>
+                                        Presentamos un nuevo y audaz diseño de cámara en una categoría propia. Es de
+                                        tamaño ultra grande con una cámara de corte de contorno que aloja a la
+                                        perfección lentes de vanguardia.
+                                    </p>
+                                    <p>Confort para la vista<br>
+                                        La pantalla más vívida y brillante en un smartphone Galaxy, Dynamic AMOLED 2X
+                                        ofrece una vista impresionante, mientras que Eye Comfort Shield reduce la luz
+                                        azul dañina por la noche. Estos se combinan con la pantalla Super Smooth 120Hz,
+                                        optimizando la frecuencia de actualización basada en su contenido para un
+                                        desplazamiento sin problemas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal5" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="single_product">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-2 order-2">
+                                    <div class="gallery">
+                                        <img src="assets/images/1651_4_z_532x399.jpg" alt="Product 1"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                        <img src="assets/images/1651_3_z_532x399.jpg" alt="Product 2"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                        <img src="assets/images/1651_6_z_532x399.jpg" alt="Product 3"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                    </div>
+                                </div>
+                                <div class="col order-lg-2">
+                                    <div class="image-selected">
+                                        <img src="https://www.digi-zoom.com.ar/images/productos/1651_3_z.jpg"
+                                            alt="Main Product Image" class="img-fluid zoom-image" id="mainImage">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-3">
+                                    <div class="product_description">
+                                        <nav>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+                                                <li class="breadcrumb-item active">Tecnologia</li>
+                                            </ol>
+                                        </nav>
+                                        <div class="product_name">
+                                            Canon EOS Rebel T7 / 1500D (18-55 mm)</div>
+                                        <div class="product-rating">
+                                            <span class="badge badge-success"><i class="fa fa-star"></i> 4.5 Star</span>
+                                            <span class="rating-review">35 Valoraciones & 45 Reseñas</span>
+                                        </div>
+                                        <div>
+                                            <span class="product_price">$ 1.285.000</span>
+                                            <div class="product_discount">
+                                                <span class='text-decoration-line-through'>$ 50,000</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="product_saved">Ahorra:</span>
+                                            <span style='color:black'>$ 50,000</span>
+                                        </div>
+                                        <hr class="singleline">
+                                        <div class="order_info d-flex flex-row">
+                                            <form action="#">
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="input-group quantity-selector">
+                                                    <span>Cantidad: </span>
+                                                    <input type="number" id="inputQuantitySelector"
+                                                        class="form-control rounded" aria-live="polite"
+                                                        data-bs-step="counter" name="cantidad" title="cantidad"
+                                                        value="0" min="0" max="10" step="1" data-bs-round="0"
+                                                        aria-label="Selector Cantidad">
+                                                    <span>(10 unidades) </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                    al carrito
+                                                </button>
+                                                <button type="button" class="btn btn-success shop-button">Comprar
+                                                    ahora</button>
+                                                <button class="product_fav"><i class="fas fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Características del producto</span>
+                                </div>
+                                <div class="col-md-6"> <a href="#" data-abc="true"> <span
+                                            class="ml-auto view-all"></span> </a> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="col-md-12 table table-striped">
+                                        <tbody>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Fabricante:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Canon</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Linea:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>EOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Modelo
+                                                        alfanumérico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>1500D</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Color:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Negro</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de sensor
+                                                        óptico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>CMOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de cámara
+                                                        :</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>DSLR</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Descripción</span>
+                                </div>
+                            </div>
+                            <div class="row mx-3">
+                                <div class="col-md-12">
+                                    <p>La marca japonesa Canon combina calidad y rendimiento en sus productos. No
+                                        importa si recién comenzás en el mundo de la fotografía o si querés mejorar tu
+                                        equipo, Canon hará que te enamores de la fotografía.</p>
+                                    <p>Una extensión de tu visión<br>
+                                        El visor réflex permite obtener una perspectiva realista y tomar fotografías
+                                        increíbles con resultados más exactos gracias a la posibilidad de intercambiar
+                                        objetivos. Además, por sus múltiples funcionalidades, podés dar rienda suelta a
+                                        tu creatividad y controlar diferentes parámetros para tomar la fotografía
+                                        perfecta.</p>
+                                    <p>Fotos profesionales de noche y de día<br>
+                                        Con el sensor CMOS la digitalización de las imágenes se realiza de manera
+                                        interna, con gran rapidez y mediante transmisores más pequeños. Además, cuenta
+                                        con una gran ventaja, el sensor es más sensible a la luz por lo que en
+                                        condiciones de baja iluminación, obtenés excelentes tomas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal6" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="single_product">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-2 order-2">
+                                    <div class="gallery">
+                                        <img src="assets/images/1651_4_z_532x399.jpg" alt="Product 1"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                        <img src="assets/images/1651_3_z_532x399.jpg" alt="Product 2"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                        <img src="assets/images/1651_6_z_532x399.jpg" alt="Product 3"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                    </div>
+                                </div>
+                                <div class="col order-lg-2">
+                                    <div class="image-selected">
+                                        <img src="https://www.digi-zoom.com.ar/images/productos/1651_3_z.jpg"
+                                            alt="Main Product Image" class="img-fluid zoom-image" id="mainImage">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-3">
+                                    <div class="product_description">
+                                        <nav>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+                                                <li class="breadcrumb-item active">Tecnologia</li>
+                                            </ol>
+                                        </nav>
+                                        <div class="product_name">
+                                            Canon EOS Rebel T7 / 1500D (18-55 mm)</div>
+                                        <div class="product-rating">
+                                            <span class="badge badge-success"><i class="fa fa-star"></i> 4.5 Star</span>
+                                            <span class="rating-review">35 Valoraciones & 45 Reseñas</span>
+                                        </div>
+                                        <div>
+                                            <span class="product_price">$ 1.285.000</span>
+                                            <div class="product_discount">
+                                                <span class='text-decoration-line-through'>$ 50,000</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="product_saved">Ahorra:</span>
+                                            <span style='color:black'>$ 50,000</span>
+                                        </div>
+                                        <hr class="singleline">
+                                        <div class="order_info d-flex flex-row">
+                                            <form action="#">
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="input-group quantity-selector">
+                                                    <span>Cantidad: </span>
+                                                    <input type="number" id="inputQuantitySelector"
+                                                        class="form-control rounded" aria-live="polite"
+                                                        data-bs-step="counter" name="cantidad" title="cantidad"
+                                                        value="0" min="0" max="10" step="1" data-bs-round="0"
+                                                        aria-label="Selector Cantidad">
+                                                    <span>(10 unidades) </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                    al carrito
+                                                </button>
+                                                <button type="button" class="btn btn-success shop-button">Comprar
+                                                    ahora</button>
+                                                <button class="product_fav"><i class="fas fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Características del producto</span>
+                                </div>
+                                <div class="col-md-6"> <a href="#" data-abc="true"> <span
+                                            class="ml-auto view-all"></span> </a> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="col-md-12 table table-striped">
+                                        <tbody>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Fabricante:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Canon</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Linea:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>EOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Modelo
+                                                        alfanumérico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>1500D</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Color:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Negro</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de sensor
+                                                        óptico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>CMOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de cámara
+                                                        :</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>DSLR</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Descripción</span>
+                                </div>
+                            </div>
+                            <div class="row mx-3">
+                                <div class="col-md-12">
+                                    <p>La marca japonesa Canon combina calidad y rendimiento en sus productos. No
+                                        importa si recién comenzás en el mundo de la fotografía o si querés mejorar tu
+                                        equipo, Canon hará que te enamores de la fotografía.</p>
+                                    <p>Una extensión de tu visión<br>
+                                        El visor réflex permite obtener una perspectiva realista y tomar fotografías
+                                        increíbles con resultados más exactos gracias a la posibilidad de intercambiar
+                                        objetivos. Además, por sus múltiples funcionalidades, podés dar rienda suelta a
+                                        tu creatividad y controlar diferentes parámetros para tomar la fotografía
+                                        perfecta.</p>
+                                    <p>Fotos profesionales de noche y de día<br>
+                                        Con el sensor CMOS la digitalización de las imágenes se realiza de manera
+                                        interna, con gran rapidez y mediante transmisores más pequeños. Además, cuenta
+                                        con una gran ventaja, el sensor es más sensible a la luz por lo que en
+                                        condiciones de baja iluminación, obtenés excelentes tomas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal7" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="single_product">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-2 order-2">
+                                    <div class="gallery">
+                                        <img src="assets/images/1651_4_z_532x399.jpg" alt="Product 1"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                        <img src="assets/images/1651_3_z_532x399.jpg" alt="Product 2"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                        <img src="assets/images/1651_6_z_532x399.jpg" alt="Product 3"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                    </div>
+                                </div>
+                                <div class="col order-lg-2">
+                                    <div class="image-selected">
+                                        <img src="https://www.digi-zoom.com.ar/images/productos/1651_3_z.jpg"
+                                            alt="Main Product Image" class="img-fluid zoom-image" id="mainImage">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-3">
+                                    <div class="product_description">
+                                        <nav>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+                                                <li class="breadcrumb-item active">Tecnologia</li>
+                                            </ol>
+                                        </nav>
+                                        <div class="product_name">
+                                            Canon EOS Rebel T7 / 1500D (18-55 mm)</div>
+                                        <div class="product-rating">
+                                            <span class="badge badge-success"><i class="fa fa-star"></i> 4.5 Star</span>
+                                            <span class="rating-review">35 Valoraciones & 45 Reseñas</span>
+                                        </div>
+                                        <div>
+                                            <span class="product_price">$ 1.285.000</span>
+                                            <div class="product_discount">
+                                                <span class='text-decoration-line-through'>$ 50,000</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="product_saved">Ahorra:</span>
+                                            <span style='color:black'>$ 50,000</span>
+                                        </div>
+                                        <hr class="singleline">
+                                        <div class="order_info d-flex flex-row">
+                                            <form action="#">
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="input-group quantity-selector">
+                                                    <span>Cantidad: </span>
+                                                    <input type="number" id="inputQuantitySelector"
+                                                        class="form-control rounded" aria-live="polite"
+                                                        data-bs-step="counter" name="cantidad" title="cantidad"
+                                                        value="0" min="0" max="10" step="1" data-bs-round="0"
+                                                        aria-label="Selector Cantidad">
+                                                    <span>(10 unidades) </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                    al carrito
+                                                </button>
+                                                <button type="button" class="btn btn-success shop-button">Comprar
+                                                    ahora</button>
+                                                <button class="product_fav"><i class="fas fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Características del producto</span>
+                                </div>
+                                <div class="col-md-6"> <a href="#" data-abc="true"> <span
+                                            class="ml-auto view-all"></span> </a> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="col-md-12 table table-striped">
+                                        <tbody>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Fabricante:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Canon</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Linea:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>EOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Modelo
+                                                        alfanumérico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>1500D</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Color:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Negro</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de sensor
+                                                        óptico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>CMOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de cámara
+                                                        :</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>DSLR</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Descripción</span>
+                                </div>
+                            </div>
+                            <div class="row mx-3">
+                                <div class="col-md-12">
+                                    <p>La marca japonesa Canon combina calidad y rendimiento en sus productos. No
+                                        importa si recién comenzás en el mundo de la fotografía o si querés mejorar tu
+                                        equipo, Canon hará que te enamores de la fotografía.</p>
+                                    <p>Una extensión de tu visión<br>
+                                        El visor réflex permite obtener una perspectiva realista y tomar fotografías
+                                        increíbles con resultados más exactos gracias a la posibilidad de intercambiar
+                                        objetivos. Además, por sus múltiples funcionalidades, podés dar rienda suelta a
+                                        tu creatividad y controlar diferentes parámetros para tomar la fotografía
+                                        perfecta.</p>
+                                    <p>Fotos profesionales de noche y de día<br>
+                                        Con el sensor CMOS la digitalización de las imágenes se realiza de manera
+                                        interna, con gran rapidez y mediante transmisores más pequeños. Además, cuenta
+                                        con una gran ventaja, el sensor es más sensible a la luz por lo que en
+                                        condiciones de baja iluminación, obtenés excelentes tomas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal8" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="single_product">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-2 order-2">
+                                    <div class="gallery">
+                                        <img src="assets/images/1651_4_z_532x399.jpg" alt="Product 1"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                        <img src="assets/images/1651_3_z_532x399.jpg" alt="Product 2"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                        <img src="assets/images/1651_6_z_532x399.jpg" alt="Product 3"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this)">
+                                    </div>
+                                </div>
+                                <div class="col order-lg-2">
+                                    <div class="image-selected">
+                                        <img src="https://www.digi-zoom.com.ar/images/productos/1651_3_z.jpg"
+                                            alt="Main Product Image" class="img-fluid zoom-image" id="mainImage">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-3">
+                                    <div class="product_description">
+                                        <nav>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+                                                <li class="breadcrumb-item active">Tecnologia</li>
+                                            </ol>
+                                        </nav>
+                                        <div class="product_name">
+                                            Canon EOS Rebel T7 / 1500D (18-55 mm)</div>
+                                        <div class="product-rating">
+                                            <span class="badge badge-success"><i class="fa fa-star"></i> 4.5 Star</span>
+                                            <span class="rating-review">35 Valoraciones & 45 Reseñas</span>
+                                        </div>
+                                        <div>
+                                            <span class="product_price">$ 1.285.000</span>
+                                            <div class="product_discount">
+                                                <span class='text-decoration-line-through'>$ 50,000</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="product_saved">Ahorra:</span>
+                                            <span style='color:black'>$ 50,000</span>
+                                        </div>
+                                        <hr class="singleline">
+                                        <div class="order_info d-flex flex-row">
+                                            <form action="#">
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="input-group quantity-selector">
+                                                    <span>Cantidad: </span>
+                                                    <input type="number" id="inputQuantitySelector"
+                                                        class="form-control rounded" aria-live="polite"
+                                                        data-bs-step="counter" name="cantidad" title="cantidad"
+                                                        value="0" min="0" max="10" step="1" data-bs-round="0"
+                                                        aria-label="Selector Cantidad">
+                                                    <span>(10 unidades) </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                    al carrito
+                                                </button>
+                                                <button type="button" class="btn btn-success shop-button">Comprar
+                                                    ahora</button>
+                                                <button class="product_fav"><i class="fas fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Características del producto</span>
+                                </div>
+                                <div class="col-md-6"> <a href="#" data-abc="true"> <span
+                                            class="ml-auto view-all"></span> </a> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="col-md-12 table table-striped">
+                                        <tbody>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Fabricante:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Canon</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Linea:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>EOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Modelo
+                                                        alfanumérico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>1500D</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Color:</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>Negro</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de sensor
+                                                        óptico:</span>
+                                                </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>CMOS</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="row mt-10">
+                                                <td class="col-md-4"><span class="p_specification">Tipo de cámara
+                                                        :</span> </td>
+                                                <td class="col-md-8">
+                                                    <ul>
+                                                        <li>DSLR</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row row-underline">
+                                <div class="col-md-6"> <span class=" deal-text">Descripción</span>
+                                </div>
+                            </div>
+                            <div class="row mx-3">
+                                <div class="col-md-12">
+                                    <p>La marca japonesa Canon combina calidad y rendimiento en sus productos. No
+                                        importa si recién comenzás en el mundo de la fotografía o si querés mejorar tu
+                                        equipo, Canon hará que te enamores de la fotografía.</p>
+                                    <p>Una extensión de tu visión<br>
+                                        El visor réflex permite obtener una perspectiva realista y tomar fotografías
+                                        increíbles con resultados más exactos gracias a la posibilidad de intercambiar
+                                        objetivos. Además, por sus múltiples funcionalidades, podés dar rienda suelta a
+                                        tu creatividad y controlar diferentes parámetros para tomar la fotografía
+                                        perfecta.</p>
+                                    <p>Fotos profesionales de noche y de día<br>
+                                        Con el sensor CMOS la digitalización de las imágenes se realiza de manera
+                                        interna, con gran rapidez y mediante transmisores más pequeños. Además, cuenta
+                                        con una gran ventaja, el sensor es más sensible a la luz por lo que en
+                                        condiciones de baja iluminación, obtenés excelentes tomas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

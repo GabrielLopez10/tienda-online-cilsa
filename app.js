@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdown = document.querySelector(".nav-item.dropdown .nav-link");
   const offcanvas = document.getElementById("offcanvas");
   const dropdownMenu = document.querySelector(".dropdown-menu");
+  const mouseScroll = document.querySelector(".mouse_scroll");
 
   function toggleDropdown() {
     if (window.innerWidth >= 768) {
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dropdown.classList.remove("no-arrow");
     } else {
       dropdown.removeAttribute("data-bs-toggle");
-      dropdown.href = "#categorias";
+      dropdown.href = "productos.html";
       dropdownMenu.classList.add("d-none");
       dropdown.classList.add("no-arrow");
     }
@@ -21,136 +22,58 @@ document.addEventListener("DOMContentLoaded", () => {
   offcanvas.addEventListener("shown.bs.offcanvas", toggleDropdown);
   offcanvas.addEventListener("hidden.bs.offcanvas", toggleDropdown);
 
-  // Event Listener for mouse scroll icon to scroll to slide-3
-  document.querySelector(".mouse_scroll").addEventListener("click", () => {
-    document.getElementById("slide-2").scrollIntoView({
-      behavior: "smooth",
-    });
-  });
-
-  // Slide Navigation
-  const windowElem = window;
-  const documentElem = document;
-  const navButtons = document.querySelectorAll("nav a[href^='#']");
-  const navGoPrev = document.querySelector(".go-prev");
-  const navGoNext = document.querySelector(".go-next");
-  const slidesContainer = document.querySelector(".slides-container");
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = slides[0];
-  let isAnimating = false;
-  let pageHeight = windowElem.innerHeight;
-
-    const keyCodes = {
-      UP: 38,
-      DOWN: 40
-  };
-
-  goToSlide(currentSlide);
-
-  windowElem.addEventListener("resize", onResize);
-  windowElem.addEventListener("wheel", onMouseWheel);
-  documentElem.addEventListener("keydown", onKeyDown);
-
-  navButtons.forEach((button) => {
-    button.addEventListener("click", onNavButtonClick);
-  });
-
-  if (navGoPrev) {
-      navGoPrev.addEventListener("click", goToPrevSlide);
-  }
-
-  if (navGoNext) {
-      navGoNext.addEventListener("click", goToNextSlide);
-  } 
-
-  function onNavButtonClick(event) {
-    const button = event.currentTarget;
-    const slide = document.querySelector(button.getAttribute("href"));
-
-    if (slide) {
-      goToSlide(slide);
-      event.preventDefault();
-    }
-  }
-
-  function onKeyDown(event) {
-    const PRESSED_KEY = event.keyCode;
-
-    if (PRESSED_KEY === keyCodes.UP) {
-      goToPrevSlide();
-      event.preventDefault();
-    } else if (PRESSED_KEY === keyCodes.DOWN) {
-      goToNextSlide();
-      event.preventDefault();
-    }
-  }
-
-  function onMouseWheel(event) {
-    const delta = event.deltaY;
-
-    if (delta > 0) {
-      goToNextSlide();
-    } else if (delta < 0) {
-      goToPrevSlide();
-    }
-
-    event.preventDefault();
-  }
-
-  function goToPrevSlide() {
-    const prevSlide = currentSlide.previousElementSibling;
-    if (prevSlide) {
-      goToSlide(prevSlide);
-    }
-  }
-
-  function goToNextSlide() {
-    const nextSlide = currentSlide.nextElementSibling;
-    if (nextSlide) {
-      goToSlide(nextSlide);
-    }
-  }
-
-  function goToSlide(slide) {
-    if (!isAnimating && slide) {
-      isAnimating = true;
-      currentSlide = slide;
-
-      slidesContainer.scrollTo({
-        top: pageHeight * [...slides].indexOf(currentSlide),
+  if (mouseScroll) {
+    console.log("Mouse scroll found, adding click event.");
+    mouseScroll.addEventListener("click", () => {
+      document.getElementById("slide-2").scrollIntoView({
         behavior: "smooth",
       });
+    });
+  } else {
+    console.log("Mouse scroll element not found, skipping mouse scroll setup.");
+  }
 
-      navButtons.forEach((button) => button.classList.remove("active"));
-      const activeButton = document.querySelector(
-        `nav a[href="#${currentSlide.id}"]`
-      );
-      if (activeButton) {
-        activeButton.classList.add("active");
+  // Validacion del formulario
+  var form = document.querySelector(".needs-validation");
+
+  form.addEventListener(
+    "submit",
+    (event) => {
+      event.preventDefault(); // Impide el envio del formulario por defecto
+
+      if (!form.checkValidity()) {
+        event.stopPropagation(); // Detiene el envio del formulario si es invalido
+      } else {
+        // Si el formulario es valido, muestra el modal de confirmacion
+        var modal = new bootstrap.Modal(
+          document.getElementById("confirmationModal")
+        );
+        modal.show();
+        console.log("Modal found:", modal);
+
+        // Limpiar los campos del formulario despues de mostrar el modal
+        form.reset();
+
+        // Elimina las clases de feedback de bootstrap despues del reinicio
+        form.classList.remove("was-validated");
       }
 
-      setTimeout(onSlideChangeEnd, 1000);
-    }
-  }
+      // Añade las clases de feedback de bootstrap por defecto
+      form.classList.add("was-validated");
+    },
+    false
+  );
 
-  function onSlideChangeEnd() {
-    isAnimating = false;
-  }
+  fetch("productosModal.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.querySelector("#modals-container").innerHTML = data;
+      console.log("Modals loaded successfully.");
+    })
+    .catch((error) => console.error("Error loading modals:", error));
 
-  function onResize() {
-    const newPageHeight = windowElem.innerHeight;
-
-    if (pageHeight !== newPageHeight) {
-      pageHeight = newPageHeight;
-
-      slides.forEach((slide) => {
-        slide.style.height = `${pageHeight}px`;
-      });
-
-      slidesContainer.scrollTo({
-        top: pageHeight * [...slides].indexOf(currentSlide),
-        behavior: "instant",
-      });
-    }
-  }
+  window.changeImage = (imgElement, imageId) => {
+    var mainImage = document.getElementById(imageId);
+    mainImage.src = imgElement.src;
+  };
 });
