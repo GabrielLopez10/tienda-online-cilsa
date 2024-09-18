@@ -50,6 +50,13 @@
                             </ul>
                         </div>
                     </div>
+                    <button id="checkout-button" class="btn btn-primary position-relative">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+                          0
+                          <span class="visually-hidden">items in cart</span>
+                        </span>
+                      </button>
                 </div>
             </nav>
         </div>
@@ -67,7 +74,8 @@
                                 <img src="assets/images/megane1.jpg" class="card-img-top">
                                 <div class="card-body row justify-content-end align-items-end">
                                     <h5 class="card-title">Renault Megane E-tech Eléctrico</h5>
-                                    <p class="card-text">El nuevo Megane E-Tech se presenta con un innovador diseño crossover deportivo, pensado para los conductores más exigentes.</p>
+                                    <p class="card-text">El nuevo Megane E-Tech se presenta con un innovador diseño
+                                        crossover deportivo, pensado para los conductores más exigentes.</p>
                                     <div class="mb-2">
                                         <span
                                             class="font-bold text-decoration-line-through"><strong>$68.850.000</strong></span>
@@ -100,7 +108,8 @@
                                 <div class="card-body row justify-content-end align-items-end">
                                     <h5 class="card-title">Ram 1500 5.7 Dc 4×4 Laramie Night Edition
                                     </h5>
-                                    <p class="card-text">Laramie Night Edition: una nueva configuración que redefine su carácter y destaca visualmente por su aspecto deportivo.</p>
+                                    <p class="card-text">Laramie Night Edition: una nueva configuración que redefine su
+                                        carácter y destaca visualmente por su aspecto deportivo.</p>
                                     <div class="mb-2">
                                         <span
                                             class="font-bold text-decoration-line-through"><strong>$56.900.000</strong></span>
@@ -161,7 +170,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col"> 
+                        <div class="col">
                             <div class="card w-100 container-fluid">
                                 <img src="assets/images/renault1.jpg" class="card-img-top">
                                 <div class="card-body row">
@@ -215,7 +224,8 @@
                                 <p class="card-text">El Samsung Galaxy S21 Ultra 5G es el celular perfecto para aquellos
                                     que buscan lo último en tecnología y rendimiento.</p>
                                 <div class="mb-2">
-                                    <span class="font-bold text-decoration-line-through"><strong>$1.351.749</strong></span>
+                                    <span
+                                        class="font-bold text-decoration-line-through"><strong>$1.351.749</strong></span>
                                     <span class="text-body-secondary">$1.151.749</span>
                                 </div>
                                 <div class="card-footer py-3">
@@ -429,6 +439,28 @@
             </div>
         </div>
     </div>
+<!-- Checkout Modal -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>Productos en el carrito:</h6>
+          <ul id="cart-items-list">
+            <!-- Los productos se añaden aquí -->
+          </ul>
+          <p><span id="cart-total">$0.00</span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" id="confirm-checkout" class="btn btn-primary">Confirma compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <div id="modals-container"></div>
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>

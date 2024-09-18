@@ -429,3 +429,21 @@ ul {
     display: none;
     border-radius: 100px;
 }
+
+.cart-icon {
+    position:relative;
+    display: inline-block;
+}
+
+.cart-icon i {
+    font-size: 24px;
+}
+
+#cart-count {
+    position: absolute;
+    background-color: red;
+    color: white;
+    border-radius:2%;
+    padding: 3px 7px;
+    font-size: 12px;
+}

@@ -75,8 +75,8 @@
                                             <div class="col-xs-6">
                                                 <div class="input-group quantity-selector">
                                                     <span>Cantidad: </span>
-                                                    <input type="number" id="inputQuantitySelector"
-                                                        class="form-control rounded" aria-live="polite"
+                                                    <input type="number"
+                                                        class="input-quantity-selector form-control rounded" aria-live="polite"
                                                         data-bs-step="counter" name="cantidad" title="cantidad"
                                                         value="0" min="0" max="10" step="1" data-bs-round="0"
                                                         aria-label="Selector Cantidad">
@@ -85,7 +85,8 @@
                                             </div>
 
                                             <div class="col-xs-6">
-                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                <button type="button" class="btn btn-primary shop-button" data-id="1"
+                                                    data-name="Canon EOS Rebel T7 / 1500D" data-bs-target="#productModal1" data-price="1235000">Añadir
                                                     al carrito
                                                 </button>
                                                 <button type="button" class="btn btn-success shop-button">Comprar
@@ -265,8 +266,8 @@
                                             <div class="col-xs-6">
                                                 <div class="input-group quantity-selector">
                                                     <span>Cantidad: </span>
-                                                    <input type="number" id="inputQuantitySelector"
-                                                        class="form-control rounded" aria-live="polite"
+                                                    <input type="number"
+                                                        class="input-quantity-selector form-control rounded" aria-live="polite"
                                                         data-bs-step="counter" name="cantidad" title="cantidad"
                                                         value="0" min="0" max="20" step="1" data-bs-round="0"
                                                         aria-label="Selector Cantidad">
@@ -275,7 +276,8 @@
                                             </div>
 
                                             <div class="col-xs-6">
-                                                <button type="button" class="btn btn-primary shop-button">Añadir
+                                                <button type="button" class="btn btn-primary shop-button" data-id="2"
+                                                    data-name="Lenovo" data-price="1093999" data-bs-target="#productModal2">Añadir
                                                     al carrito
                                                 </button>
                                                 <button type="button" class="btn btn-success shop-button">Comprar
@@ -411,17 +413,16 @@
                             <div class="row">
                                 <div class="col-lg-2 order-2">
                                     <div class="gallery">
-                                        <img src="assets/images/ps5-2.webp"
-                                            alt="Product 1" class="img-thumbnail gallery-img"
-                                            onclick="changeImage(this, 'mainImage3')">
+                                        <img src="assets/images/ps5-2.webp" alt="Product 1"
+                                            class="img-thumbnail gallery-img" onclick="changeImage(this, 'mainImage3')">
                                         <img src="assets/images/playstationimg2.png" alt="Product 2"
                                             class="img-thumbnail gallery-img" onclick="changeImage(this, 'mainImage3')">
                                     </div>
                                 </div>
                                 <div class="col order-lg-2">
                                     <div class="image-selected">
-                                        <img src="assets/images/ps5-2.webp"
-                                            alt="Main Product Image" class="img-fluid zoom-image" id="mainImage3">
+                                        <img src="assets/images/ps5-2.webp" alt="Main Product Image"
+                                            class="img-fluid zoom-image" id="mainImage3">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 order-3">
