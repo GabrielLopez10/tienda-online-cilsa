@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Formato de Moneda (Peso Argentino)
     const formatter = new Intl.NumberFormat("es-AR", {
       style: "currency",
-      currency: "ARS", 
+      currency: "ARS",
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
@@ -202,7 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let total = 0;
     cart.forEach((item) => {
       const listItem = document.createElement("li");
-      listItem.textContent = `${item.name} - ${item.quantity} x ${formatter.format(item.price)}`;
+      listItem.textContent = `${item.name} - ${
+        item.quantity
+      } x ${formatter.format(item.price)}`;
       cartItemsList.appendChild(listItem);
       total += parseFloat(item.price) * item.quantity;
     });
@@ -224,7 +226,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", handleCheckout);
 
   document.getElementById("confirm-checkout").addEventListener("click", () => {
-
     alert("Gracias por tu compra!");
 
     // limpia el carrito despues de la compra
@@ -232,13 +233,11 @@ document.addEventListener("DOMContentLoaded", () => {
     cart = []; // Limpia el array en cada compra realizada
     updateCartCount();
 
-
     const checkoutModal = bootstrap.Modal.getInstance(
       document.getElementById("checkoutModal")
     );
     checkoutModal.hide();
   });
-
 
   loadCart();
 });
