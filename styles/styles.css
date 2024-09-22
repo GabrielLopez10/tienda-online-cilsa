@@ -14,8 +14,9 @@
 body {
     font-family: var(--fuente-inter);
     box-sizing: border-box;
+    /*     background: linear-gradient(90deg, rgba(57,58,64,1) 0%, rgba(41,41,45,1) 16%, rgba(41,41,45,1) 90%, rgba(57,58,64,1) 100%);
+ */
 }
-
 
 .offcanvas.offcanvas-start {
     width: 75%;
@@ -122,7 +123,7 @@ body {
 
 #slide-2 {
     background: linear-gradient(rgba(135, 60, 255, 1), rgba(135, 60, 255, 0.0) 50%),
-            linear-gradient(-21.5deg, rgba(120, 155, 255, 0.9) 45%, rgba(55, 230, 235, 1) 0%);
+        linear-gradient(-21.5deg, rgba(120, 155, 255, 0.9) 45%, rgba(55, 230, 235, 1) 0%);
 }
 
 
@@ -187,7 +188,6 @@ img {
     padding: .1rem 0rem !important;
     margin-bottom: 0rem;
     list-style: none;
-    background-color: #ffffff;
     border-radius: .25rem
 }
 
@@ -326,7 +326,6 @@ img {
     margin-left: -10px;
     font-size: 25px;
     margin-bottom: 10px;
-    color: #000;
     font-weight: 700
 }
 
@@ -400,17 +399,6 @@ ul {
     margin-top: 16px
 }
 
-.quantity-selector {
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 40px;
-}
-
-.container-fluid {
-    background-color: white;
-}
-
 .gallery-img {
     max-width: 100px;
     margin: 5px;
@@ -431,7 +419,7 @@ ul {
 }
 
 .cart-icon {
-    position:relative;
+    position: relative;
     display: inline-block;
 }
 
@@ -443,7 +431,47 @@ ul {
     position: absolute;
     background-color: red;
     color: white;
-    border-radius:2%;
+    border-radius: 2%;
     padding: 3px 7px;
     font-size: 12px;
+}
+
+.btn-bd-primary {
+    background-color: #712cf9;
+    font-weight: 600;
+    fill: white;
+}
+
+.btn-bd-primary:hover {
+    background-color: #6528e0;      /* Button background color on hover */
+    color: white;                   /* Button text color on hover */
+    border-color: #6528e0;   
+}
+
+.btn-bd-primary:active {
+    background-color: #5a23c8;      /* Button background color when active */
+    color: white;                   /* Button text color when active */
+    border-color: #5a23c8;   
+}
+
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}
+
+.link-body-emphasis, .dropdown-menu {
+    fill: var(--svg-fill-color);
+}
+
+
+[data-bs-theme="light"] {
+    --svg-fill-color: black;
+}
+
+[data-bs-theme="dark"] {
+    --svg-fill-color: white;
 }
