@@ -139,10 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
-  function loadCart() {
+  /*  function loadCart() {
     cart = JSON.parse(localStorage.getItem("cart")) || [];
     updateCartCount();
-  }
+  } */
 
   function setupModalEventListeners() {
     document.querySelectorAll(".shop-button").forEach((button) => {
@@ -185,8 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderCartSummary() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartItemsList = document.getElementById("cart-items-list");
-    const cartTotal = document.getElementById("cart-total");
+    const cartTotal = document.querySelectorAll(".cart-total");
+    const checkoutButton = document.getElementById("confirm-checkout");
 
     cartItemsList.innerHTML = "";
 
@@ -194,22 +196,128 @@ document.addEventListener("DOMContentLoaded", () => {
     const formatter = new Intl.NumberFormat("es-AR", {
       style: "currency",
       currency: "ARS",
-      minimumFractionDigits: 2,
+      minimumFractionDigits: 0,
       maximumFractionDigits: 2,
     });
 
+    if (cart.length === 0) {
+      cartItemsList.innerHTML =
+        '<li class="list-group-item text-center">Tu carrito esta vacio</li>';
+      checkoutButton.disabled = true;
+      cartTotal.forEach((e) => (e.textContent = formatter.format(0)));
+      return;
+    }
+
+    checkoutButton.disabled = false;
+
     // Añade items a la lista
     let total = 0;
-    cart.forEach((item) => {
+    cart.forEach((item, index) => {
       const listItem = document.createElement("li");
-      listItem.textContent = `${item.name} - ${
-        item.quantity
-      } x ${formatter.format(item.price)}`;
+      listItem.classList.add(
+        "list-group-item",
+        "d-flex",
+        "justify-content-between",
+        "align-items-center",
+        "fw-bold"
+      );
+
+      const productImages = [
+        {
+          name: "Canon EOS Rebel T7 / 1500D",
+          imageFilename: "1651_4_z_532x399.jpg",
+        },
+        {
+          name: "Lenovo",
+          imageFilename:
+            "Notebook-Lenovo-V14-Business-Black-Aslan-Store-1_cropped.webp",
+        },
+        {
+          name: "Sony",
+          imageFilename: "ps5-product-thumbnail-01-en-14sep21.webp",
+        },
+        { name: "Samsung", imageFilename: "samsung2.webp" },
+        { name: "Renault Sandero", imageFilename: "renault1.jpg" },
+        { name: "Fiat", imageFilename: "fiat1.jpg" },
+        { name: "RAM 1500", imageFilename: "ram1.jpg" },
+        { name: "Renault Megane", imageFilename: "megane1.jpg" },
+      ];
+
+      // Create the product image element
+      const productImage = document.createElement("img");
+      const matchingImage = productImages.find((img) => img.name === item.name);
+      productImage.src = `assets/images/${
+        matchingImage ? matchingImage.imageFilename : "default.jpg"
+      }`; // Assuming each item has an 'imageUrl' field
+      productImage.alt = item.name;
+      productImage.style.width = "60px";
+      productImage.style.height = "60px";
+      productImage.classList.add("me-3"); // Add some margin for spacing
+
+      const productInfo = document.createElement("span");
+      productInfo.textContent = `${item.name} - ${formatter.format(
+        item.price
+      )}`;
+
+      const quantityInput = document.createElement("input");
+      quantityInput.type = "number";
+      quantityInput.classList.add(
+        "form-control",
+        "cart-quantity-input",
+        "mx-5"
+      );
+      quantityInput.value = item.quantity;
+      quantityInput.min = 1;
+      quantityInput.style.width = "60px";
+
+      const deleteButton = document.createElement("button");
+      deleteButton.classList.add("btn", "btn-danger", "btn-sm", "mx-5");
+      deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+
+      deleteButton.addEventListener("click", () => {
+        removeFromCart(index);
+      });
+
+      quantityInput.addEventListener("change", (e) => {
+        const newQuantity = parseInt(e.target.value, 10);
+        if (newQuantity > 0) {
+          updateCartItemQuantity(index, newQuantity);
+        }
+      });
+
+      listItem.appendChild(productImage);
+      listItem.appendChild(productInfo);
+      listItem.appendChild(quantityInput);
+      listItem.appendChild(deleteButton);
+
       cartItemsList.appendChild(listItem);
+
       total += parseFloat(item.price) * item.quantity;
     });
 
-    cartTotal.textContent = `Total: ${formatter.format(total)}`;
+    const formattedTotal = formatter.format(total);
+    cartTotal.forEach((e) => {
+      e.textContent = formattedTotal;
+    });
+  }
+
+  // Funcion para remover items del carrito
+  function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCartSummary();
+    updateCartCount();
+    location.reload();
+  }
+
+  // Function para actualizar la cantidad de items en el carrito
+  function updateCartItemQuantity(index, newQuantity) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart[index].quantity = newQuantity;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCartSummary();
+    updateCartCount();
   }
 
   function handleCheckout() {
@@ -224,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("checkout-button")
     .addEventListener("click", handleCheckout);
-
+  /* 
   document.getElementById("confirm-checkout").addEventListener("click", () => {
     alert("Gracias por tu compra!");
 
@@ -233,11 +341,167 @@ document.addEventListener("DOMContentLoaded", () => {
     cart = []; // Limpia el array en cada compra realizada
     updateCartCount();
 
+
     const checkoutModal = bootstrap.Modal.getInstance(
       document.getElementById("checkoutModal")
     );
     checkoutModal.hide();
   });
 
+  document.getElementById("cerrar-modal").addEventListener("click", () => {
+    location.reload()
+  });
+
+  loadCart(); */
+  function formatCreditCardNumber(input) {
+    let value = input.value.replace(/\D/g, '');
+
+    value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+
+    value = value.slice(0, 19);
+
+    input.value = value;
+  }
+
+  document.getElementById("typeText").addEventListener("input", (e) => {
+    formatCreditCardNumber(e.target);
+  });
+
+  function validateForm() {
+    const name = document.getElementById("typeName").value;
+    const cardNumber = document.getElementById("typeText").value;
+    const expDate = document.getElementById("typeExp").value;
+    const cvv = document.getElementById("typeCvv").value;
+
+    if (!name || !cardNumber || !expDate || !cvv) {
+      alert("Por favor, complete todos los campos de pago.");
+      return false;
+    }
+
+    if (
+      cardNumber.length !== 19 ||
+      !/^\d{4} \d{4} \d{4} \d{4}$/.test(cardNumber)
+    ) {
+      alert(
+        "Número de tarjeta inválido. Debe tener formato XXXX XXXX XXXX XXXX"
+      );
+      return false;
+    }
+
+    if (!/^\d{2}\/\d{4}$/.test(expDate)) {
+      alert("Fecha de vencimiento inválida. Debe tener formato MM/YYYY");
+      return false;
+    }
+
+    if (cvv.length !== 3 || !/^\d{3}$/.test(cvv)) {
+      alert("CVV inválido. Debe ser un número de 3 digitos");
+      return false;
+    }
+
+    return true;
+  }
+
+  document.getElementById("confirm-checkout").addEventListener("click", () => {
+    if (validateForm()) {
+      alert("Gracias por tu compra");
+
+      localStorage.removeItem("cart");
+      cart = [];
+      updateCartCount();
+      renderCartSummary();
+
+      const checkoutModal = bootstrap.Modal.getInstance(
+        document.getElementById("checkoutModal")
+      );
+      checkoutModal.hide();
+    }
+  });
+
+  document.getElementById("cerrar-modal").addEventListener("click", () => {
+    const checkoutModal = bootstrap.Modal.getInstance(
+      document.getElementById("checkoutModal")
+    );
+    checkoutModal.hide();
+    renderCartSummary();
+  });
+
+  function loadCart() {
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+    updateCartCount();
+    renderCartSummary();
+  }
+
   loadCart();
+
+  /* Comportamiento del boton cambiar tema */
+  /* const getStoredTheme = () => localStorage.getItem('theme')
+  const setStoredTheme = theme => localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active use')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  }) */
 });

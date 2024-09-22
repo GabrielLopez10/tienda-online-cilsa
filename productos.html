@@ -10,12 +10,13 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="color-mode.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="border-bottom">
-            <nav class="navbar navbar-expand-md bg-light border-bottom">
+        <div class="border-bottom ">
+            <nav class="navbar navbar-expand-md border-bottom">
                 <div class="container">
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
                         aria-controls="offcanvas" aria-label="Toggle navigation">
@@ -50,18 +51,22 @@
                             </ul>
                         </div>
                     </div>
-                    <button id="checkout-button" class="btn btn-primary position-relative">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
-                          0
-                          <span class="visually-hidden">items in cart</span>
-                        </span>
-                      </button>
+                    <div>
+                        <button id="checkout-button" class="btn btn-primary position-relative">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                id="cart-count">
+                                0
+                                <span class="visually-hidden">items in cart</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </nav>
         </div>
     </header>
-    <main class="bg-light">
+    <main>
         <section class="w-100 overflow-hidden" id="vehiculos">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
@@ -409,7 +414,7 @@
         </div>
 
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>&copy; 2024 Tienda, Inc.</p>
+            <p>&copy; 2024 AutoTech Fusión, Inc.</p>
             <ul class="list-unstyled d-flex">
                 <li class="ms-0"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
                             <use href="#twitter" />
@@ -439,28 +444,120 @@
             </div>
         </div>
     </div>
-<!-- Checkout Modal -->
-<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Checkout Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <h6>Productos en el carrito:</h6>
+                            <ul id="cart-items-list" class="list-group">
+                            </ul>
+                        </div>
+
+
+                        <div class="col-lg-6">
+
+                            <div class="card bg-primary text-white rounded-3">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                        <h5 class="mb-0">Detalles de la tarjeta</h5>
+                                        <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
+                                            class="img-fluid rounded-3" style="width: 45px;" alt="Avatar"> -->
+                                    </div>
+
+                                    <p class="small mb-2">Elegí como pagar</p>
+                                    <a href="#!" type="submit" class="text-white"><i
+                                            class="fab fa-cc-mastercard fa-2x me-2"></i></a>
+                                    <a href="#!" type="submit" class="text-white"><i
+                                            class="fab fa-cc-visa fa-2x me-2"></i></a>
+                                    <a href="#!" type="submit" class="text-white"><i
+                                            class="fab fa-cc-amex fa-2x me-2"></i></a>
+                                    <a href="#!" type="submit" class="text-white"><i
+                                            class="fab fa-cc-paypal fa-2x"></i></a>
+
+                                    <form class="mt-4">
+                                        <div data-mdb-input-init class="form-outline form-white mb-4">
+                                            <input type="text" id="typeName" class="form-control form-control-lg"
+                                                siez="17" placeholder="Ingrese nombre" />
+                                            <label class="form-label" for="typeName">Nombre del Títular</label>
+                                        </div>
+
+                                        <div data-mdb-input-init class="form-outline form-white mb-4">
+                                            <input type="text" id="typeText" class="form-control form-control-lg"
+                                                siez="17" placeholder="XXXX XXXX XXXX XXXX" minlength="19"
+                                                maxlength="19" />
+                                            <label class="form-label" for="typeText">Número de tarjeta</label>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <div class="col-md-6">
+                                                <div data-mdb-input-init class="form-outline form-white">
+                                                    <input type="text" id="typeExp" class="form-control form-control-lg"
+                                                        placeholder="MM/YYYY" size="7" id="exp" minlength="7"
+                                                        maxlength="7" />
+                                                    <label class="form-label" for="typeExp">Vencimiento</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div data-mdb-input-init class="form-outline form-white">
+                                                    <input type="password" id="typeCvv"
+                                                        class="form-control form-control-lg"
+                                                        placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3"
+                                                        maxlength="3" />
+                                                    <label class="form-label" for="typeCvv">CVV</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mb-2">Subtotal</p>
+                                        <p class="mb-2 cart-total"></p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mb-2">Envio</p>
+                                        <p class="mb-2">Gratís</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <p class="mb-2">Total</p>
+                                        <p class="mb-2 cart-total"></p>
+                                    </div>
+
+                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-info btn-block btn-lg w-100" id="confirm-checkout">
+                                        <div class="d-flex justify-content-center">
+                                            <span>Continuar compra <i
+                                                    class="fas fa-long-arrow-alt-right ms-2"></i></span>
+
+                                        </div>
+                                    </button>
+                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-danger btn-block btn-lg w-100 my-2" data-bs-dismiss="modal"
+                                        id="cerrar-modal">
+                                        <div class="d-flex justify-content-center">
+                                            <span>Cancelar</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <h6>Productos en el carrito:</h6>
-          <ul id="cart-items-list">
-            <!-- Los productos se añaden aquí -->
-          </ul>
-          <p><span id="cart-total">$0.00</span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" id="confirm-checkout" class="btn btn-primary">Confirma compra</button>
-        </div>
-      </div>
     </div>
-  </div>
     <div id="modals-container"></div>
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
