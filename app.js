@@ -119,18 +119,23 @@ document.addEventListener("DOMContentLoaded", () => {
       product.quantity = quantity;
       cart.push(product);
     }
-    updateCartCount();
     saveCart();
+    updateCartCount();
   }
 
   function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartCountElement = document.getElementById("cart-count");
+
+    let totalQuantity = 0;
+
+    // Suma las cantidades de todos los artículos del carrito
+    cart.forEach((item) => {
+      totalQuantity += item.quantity;
+    });
+
+    // Cantidad total de items en el carrito
     if (cartCountElement) {
-      // Cantidad total de items en el carrito
-      const totalQuantity = cart.reduce(
-        (total, item) => total + item.quantity,
-        0
-      );
       cartCountElement.textContent = totalQuantity;
     }
   }
@@ -138,11 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
-
-  /*  function loadCart() {
-    cart = JSON.parse(localStorage.getItem("cart")) || [];
-    updateCartCount();
-  } */
 
   function setupModalEventListeners() {
     document.querySelectorAll(".shop-button").forEach((button) => {
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (cart.length === 0) {
       cartItemsList.innerHTML =
-        '<li class="list-group-item text-center">Tu carrito esta vacio</li>';
+        '<li class="list-group-item text-center my-3">Tu carrito esta vacio</li>';
       checkoutButton.disabled = true;
       cartTotal.forEach((e) => (e.textContent = formatter.format(0)));
       return;
@@ -212,19 +212,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Añade items a la lista
     let total = 0;
+
     cart.forEach((item, index) => {
       const listItem = document.createElement("li");
+
       listItem.classList.add(
         "list-group-item",
         "d-flex",
         "justify-content-between",
         "align-items-center",
-        "fw-bold"
+        "fw-bold",
+        "my-3"
       );
 
       const productImages = [
         {
-          name: "Canon EOS Rebel T7 / 1500D",
+          name: "Canon",
           imageFilename: "1651_4_z_532x399.jpg",
         },
         {
@@ -243,16 +246,17 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Renault Megane", imageFilename: "megane1.jpg" },
       ];
 
-      // Create the product image element
+      // Añade las miniaturas de cada producto
       const productImage = document.createElement("img");
       const matchingImage = productImages.find((img) => img.name === item.name);
+
       productImage.src = `assets/images/${
         matchingImage ? matchingImage.imageFilename : "default.jpg"
-      }`; // Assuming each item has an 'imageUrl' field
+      }`;
       productImage.alt = item.name;
       productImage.style.width = "60px";
       productImage.style.height = "60px";
-      productImage.classList.add("me-3"); // Add some margin for spacing
+      productImage.classList.add("me-3");
 
       const productInfo = document.createElement("span");
       productInfo.textContent = `${item.name} - ${formatter.format(
@@ -260,6 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
       )}`;
 
       const quantityInput = document.createElement("input");
+
       quantityInput.type = "number";
       quantityInput.classList.add(
         "form-control",
@@ -271,12 +276,9 @@ document.addEventListener("DOMContentLoaded", () => {
       quantityInput.style.width = "60px";
 
       const deleteButton = document.createElement("button");
+
       deleteButton.classList.add("btn", "btn-danger", "btn-sm", "mx-5");
       deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
-
-      deleteButton.addEventListener("click", () => {
-        removeFromCart(index);
-      });
 
       quantityInput.addEventListener("change", (e) => {
         const newQuantity = parseInt(e.target.value, 10);
@@ -293,6 +295,10 @@ document.addEventListener("DOMContentLoaded", () => {
       cartItemsList.appendChild(listItem);
 
       total += parseFloat(item.price) * item.quantity;
+
+      deleteButton.addEventListener("click", () => {
+        removeFromCart(index);
+      });
     });
 
     const formattedTotal = formatter.format(total);
@@ -304,14 +310,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Funcion para remover items del carrito
   function removeFromCart(index) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCartSummary();
-    updateCartCount();
-    location.reload();
+
+    if (index >= 0 && index < cart.length) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCartSummary();
+      updateCartCount();
+    }
   }
 
-  // Function para actualizar la cantidad de items en el carrito
+  // Funcion para actualizar la cantidad de items en el carrito
   function updateCartItemQuantity(index, newQuantity) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart[index].quantity = newQuantity;
@@ -328,37 +336,29 @@ document.addEventListener("DOMContentLoaded", () => {
     checkoutModal.show();
   }
 
-  // modal de checkout cuando se hace click en el icono de carrito
+  // Modal de checkout cuando se hace click en el icono de carrito
   document
     .getElementById("checkout-button")
     .addEventListener("click", handleCheckout);
-  /* 
-  document.getElementById("confirm-checkout").addEventListener("click", () => {
-    alert("Gracias por tu compra!");
 
-    // limpia el carrito despues de la compra
-    localStorage.removeItem("cart");
-    cart = []; // Limpia el array en cada compra realizada
-    updateCartCount();
-
-
-    const checkoutModal = bootstrap.Modal.getInstance(
-      document.getElementById("checkoutModal")
-    );
-    checkoutModal.hide();
-  });
-
-  document.getElementById("cerrar-modal").addEventListener("click", () => {
-    location.reload()
-  });
-
-  loadCart(); */
   function formatCreditCardNumber(input) {
-    let value = input.value.replace(/\D/g, '');
+    let value = input.value.replace(/\D/g, "");
 
-    value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+    value = value.replace(/(\d{4})(?=\d)/g, "$1 ");
 
     value = value.slice(0, 19);
+
+    input.value = value;
+  }
+
+  function formatExpirationDate(input) {
+    let value = input.value.replace(/\D/g, "");
+
+    if (value.length > 2) {
+      value = value.replace(/(\d{2})(\d{1,4})/, "$1/$2"); // Insertar a barra después del los primeros 2 digitos (MM)
+    }
+
+    value = value.slice(0, 7); // Limitarlo a MM/YYYY
 
     input.value = value;
   }
@@ -367,38 +367,70 @@ document.addEventListener("DOMContentLoaded", () => {
     formatCreditCardNumber(e.target);
   });
 
+  document.getElementById("typeExp").addEventListener("input", (e) => {
+    formatExpirationDate(e.target);
+  });
+
   function validateForm() {
     const name = document.getElementById("typeName").value;
     const cardNumber = document.getElementById("typeText").value;
     const expDate = document.getElementById("typeExp").value;
     const cvv = document.getElementById("typeCvv").value;
+    let isValid = true;
+
+    clearErrorMessage();
 
     if (!name || !cardNumber || !expDate || !cvv) {
-      alert("Por favor, complete todos los campos de pago.");
-      return false;
+      displayErrorMessage(
+        "general-error",
+        "Por favor, complete todos los campos de pago."
+      );
+      isValid = false;
+    }
+
+    if(!/^[a-zA-Z\u00C0-\u017F\s]+$/.test(name)) {
+      displayErrorMessage("name-error", "El nombre solo puede contener letras y espacios.");
+      isValid = false;
     }
 
     if (
       cardNumber.length !== 19 ||
       !/^\d{4} \d{4} \d{4} \d{4}$/.test(cardNumber)
     ) {
-      alert(
+      displayErrorMessage(
+        "card-error",
         "Número de tarjeta inválido. Debe tener formato XXXX XXXX XXXX XXXX"
       );
-      return false;
+      isValid = false;
     }
 
     if (!/^\d{2}\/\d{4}$/.test(expDate)) {
-      alert("Fecha de vencimiento inválida. Debe tener formato MM/YYYY");
-      return false;
+      displayErrorMessage("exp-error", "Fecha de vencimiento inválida. Debe tener formato MM/YYYY");
+      isValid = false;
     }
 
     if (cvv.length !== 3 || !/^\d{3}$/.test(cvv)) {
-      alert("CVV inválido. Debe ser un número de 3 digitos");
-      return false;
+      displayErrorMessage("cvv-error", "CVV inválido. Debe ser un número de 3 digitos");
+      isValid = false;
     }
 
-    return true;
+    isValid = true;
+  }
+
+  function displayErrorMessage(elementId, message) {
+    const errorElement = document.getElementById(elementId);
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.style.display = 'block';
+    }
+  }
+
+  function clearErrorMessage()  {
+    const errorElements = document.querySelectorAll('.error-message');
+    errorElements.forEach(element => {
+      element.textContent = '';
+      element.style.display = 'none';
+    })
   }
 
   document.getElementById("confirm-checkout").addEventListener("click", () => {
@@ -432,76 +464,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   loadCart();
-
-  /* Comportamiento del boton cambiar tema */
-  /* const getStoredTheme = () => localStorage.getItem('theme')
-  const setStoredTheme = theme => localStorage.setItem('theme', theme)
-
-  const getPreferredTheme = () => {
-    const storedTheme = getStoredTheme()
-    if (storedTheme) {
-      return storedTheme
-    }
-
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  }
-
-  const setTheme = theme => {
-    if (theme === 'auto') {
-      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
-    } else {
-      document.documentElement.setAttribute('data-bs-theme', theme)
-    }
-  }
-
-  setTheme(getPreferredTheme())
-
-  const showActiveTheme = (theme, focus = false) => {
-    const themeSwitcher = document.querySelector('#bd-theme')
-
-    if (!themeSwitcher) {
-      return
-    }
-
-    const themeSwitcherText = document.querySelector('#bd-theme-text')
-    const activeThemeIcon = document.querySelector('.theme-icon-active use')
-    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-    const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
-
-    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-      element.classList.remove('active')
-      element.setAttribute('aria-pressed', 'false')
-    })
-
-    btnToActive.classList.add('active')
-    btnToActive.setAttribute('aria-pressed', 'true')
-    activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
-    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
-
-    if (focus) {
-      themeSwitcher.focus()
-    }
-  }
-
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    const storedTheme = getStoredTheme()
-    if (storedTheme !== 'light' && storedTheme !== 'dark') {
-      setTheme(getPreferredTheme())
-    }
-  })
-
-  window.addEventListener('DOMContentLoaded', () => {
-    showActiveTheme(getPreferredTheme())
-
-    document.querySelectorAll('[data-bs-theme-value]')
-      .forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          const theme = toggle.getAttribute('data-bs-theme-value')
-          setStoredTheme(theme)
-          setTheme(theme)
-          showActiveTheme(theme, true)
-        })
-      })
-  }) */
 });

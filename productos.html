@@ -48,20 +48,21 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                                <div>
+                                    <button id="checkout-button" class="btn btn-primary position-relative">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                            id="cart-count">
+                                            0
+                                            <span class="visually-hidden">items in cart</span>
+                                        </span>
+                                    </button>
+                                </div>
                             </ul>
                         </div>
                     </div>
-                    <div>
-                        <button id="checkout-button" class="btn btn-primary position-relative">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                                id="cart-count">
-                                0
-                                <span class="visually-hidden">items in cart</span>
-                            </span>
-                        </button>
-                    </div>
+
                 </div>
             </nav>
         </div>
@@ -92,7 +93,7 @@
                                                 <span class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
-                                                    class="align-middle fa fa-star" aria-hidden="true"></span> <span
+                                                    class="align-middle fa-solid fa-star-half-stroke" aria-hidden="true"></span> <span
                                                     class="align-middle fa-regular fa-star" aria-hidden="true"></span>
                                             </div>
                                             <div class="col-md-6">
@@ -127,7 +128,7 @@
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
-                                                    class="align-middle fa-regular fa-star" aria-hidden="true"></span>
+                                                    class="align-middle fa-solid fa-star-half-stroke" aria-hidden="true"></span>
                                             </div>
                                             <div class="col-md-6">
                                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -195,7 +196,7 @@
                                                 <span class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa fa-star" aria-hidden="true"></span> <span
-                                                    class="align-middle fa fa-star" aria-hidden="true"></span> <span
+                                                    class="align-middle fa-regular fa-star" aria-hidden="true"></span> <span
                                                     class="align-middle fa-regular fa-star" aria-hidden="true"></span>
                                             </div>
                                             <div class="col-md-6">
@@ -223,7 +224,7 @@
                 <div class="row row-cols-1 row-cols-sm-2 g-5 mt-1 mb-5">
                     <div class="col">
                         <div class="card h-100 container-fluid">
-                            <img src="assets/images/samsung.jpg" class="card-img-top object-fit-scale">
+                            <img src="assets/images/samsung4.webp" class="card-img-top object-fit-scale">
                             <div class="card-body row justify-content-end align-items-end">
                                 <h5 class="card-title">Samsung Galaxy S21 Ultra 5g 256 Gb Phantom Black 12 Gb Ram</h5>
                                 <p class="card-text">El Samsung Galaxy S21 Ultra 5G es el celular perfecto para aquellos
@@ -256,7 +257,7 @@
                     </div>
                     <div class="col">
                         <div class="card h-100 container-fluid">
-                            <img src="assets/images/playstationimg2.png" class="card-img-top object-fit-scale">
+                            <img src="assets/images/ps5-3.webp" class="card-img-top object-fit-scale">
                             <div class="card-body row justify-content-end align-items-end">
                                 <h5 class="card-title">Playstation 5 Sony Ps5 Standard Edition</h5>
                                 <p class="card-text">La Playstation 5 Standard Edition es la última generación de
@@ -308,7 +309,7 @@
                                                 class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                 class="align-middle fa fa-star" aria-hidden="true"></span> <span
                                                 class="align-middle fa fa-star" aria-hidden="true"></span> <span
-                                                class="align-middle fa fa-star-half" aria-hidden="true"></span>
+                                                class="align-middle fa-solid fa-star-half-stroke" aria-hidden="true"></span>
                                         </div>
                                         <div class="col-md-6">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -449,7 +450,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+                    <h5 class="modal-title" id="checkoutModalLabel">Carrito de compras</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -484,36 +485,40 @@
 
                                     <form class="mt-4">
                                         <div data-mdb-input-init class="form-outline form-white mb-4">
+                                            <label class="form-label" for="typeName">Nombre del Títular</label>
                                             <input type="text" id="typeName" class="form-control form-control-lg"
                                                 siez="17" placeholder="Ingrese nombre" />
-                                            <label class="form-label" for="typeName">Nombre del Títular</label>
+                                            <div id="name-error" class="error-message text-warning"></div>
                                         </div>
 
                                         <div data-mdb-input-init class="form-outline form-white mb-4">
+                                            <label class="form-label" for="typeText">Número de tarjeta</label>
                                             <input type="text" id="typeText" class="form-control form-control-lg"
                                                 siez="17" placeholder="XXXX XXXX XXXX XXXX" minlength="19"
                                                 maxlength="19" />
-                                            <label class="form-label" for="typeText">Número de tarjeta</label>
+                                            <div id="card-error" class="error-message text-warning"></div>
                                         </div>
-
                                         <div class="row mb-4">
                                             <div class="col-md-6">
                                                 <div data-mdb-input-init class="form-outline form-white">
+                                                    <label class="form-label" for="typeExp">Vencimiento</label>
                                                     <input type="text" id="typeExp" class="form-control form-control-lg"
                                                         placeholder="MM/YYYY" size="7" id="exp" minlength="7"
                                                         maxlength="7" />
-                                                    <label class="form-label" for="typeExp">Vencimiento</label>
+                                                    <div id="exp-error" class="error-message text-warning"></div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div data-mdb-input-init class="form-outline form-white">
+                                                    <label class="form-label" for="typeCvv">CVV</label>
                                                     <input type="password" id="typeCvv"
                                                         class="form-control form-control-lg"
                                                         placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3"
                                                         maxlength="3" />
-                                                    <label class="form-label" for="typeCvv">CVV</label>
+                                                    <div id="cvv-error" class="error-message text-warning"></div>
                                                 </div>
                                             </div>
+                                            <div id="general-error" class="my-2 error-message fw-bold text-decoration-underline text-warning "></div>
                                         </div>
 
                                     </form>
