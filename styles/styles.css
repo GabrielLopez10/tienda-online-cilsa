@@ -14,8 +14,6 @@
 body {
     font-family: var(--fuente-inter);
     box-sizing: border-box;
-    /*     background: linear-gradient(90deg, rgba(57,58,64,1) 0%, rgba(41,41,45,1) 16%, rgba(41,41,45,1) 90%, rgba(57,58,64,1) 100%);
- */
 }
 
 .offcanvas.offcanvas-start {
@@ -171,7 +169,6 @@ body {
 
 img {
     width: 500px;
-    /* You can set the dimensions to whatever you want */
     height: 500px;
     object-fit: cover;
 }
@@ -215,7 +212,8 @@ img {
 }
 
 .rating-review {
-    color: #5b5b5b
+    color: #e9e2e2;
+    margin-left: 20px;
 }
 
 .product_price {
@@ -443,14 +441,14 @@ ul {
 }
 
 .btn-bd-primary:hover {
-    background-color: #6528e0;      /* Button background color on hover */
-    color: white;                   /* Button text color on hover */
+    background-color: #6528e0;     
+    color: white;                  
     border-color: #6528e0;   
 }
 
 .btn-bd-primary:active {
-    background-color: #5a23c8;      /* Button background color when active */
-    color: white;                   /* Button text color when active */
+    background-color: #5a23c8;      
+    color: white;                  
     border-color: #5a23c8;   
 }
 
