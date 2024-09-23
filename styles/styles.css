@@ -212,7 +212,6 @@ img {
 }
 
 .rating-review {
-    color: #e9e2e2;
     margin-left: 20px;
 }
 
@@ -414,7 +413,7 @@ ul {
     font-size: 24px;
 }
 
-#cart-count {
+#cart-count, #favoritesCount {
     position: absolute;
     background-color: red;
     color: white;
@@ -462,3 +461,4 @@ ul {
 [data-bs-theme="dark"] {
     --svg-fill-color: white;
 }
+
