@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 
 :root {
@@ -15,6 +16,13 @@ body {
     font-family: var(--fuente-inter);
     box-sizing: border-box;
 }
+
+.navbar-brand,
+#titulo,
+#footer-brand {
+    font-family: "Orbitron", sans-serif;
+}
+
 
 .offcanvas.offcanvas-start {
     width: 75%;
@@ -152,6 +160,11 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 30vh;
+}
+
+#tituloContacto {
+    height: 6rem;
+    margin-top: 8rem;
 }
 
 #productos-destacados {
@@ -413,8 +426,8 @@ ul {
     font-size: 24px;
 }
 
-#cart-count, #favoritesCount {
-    position: absolute;
+#cart-count,
+#favoritesCount {
     background-color: red;
     color: white;
     border-radius: 2%;
@@ -426,18 +439,19 @@ ul {
     background-color: #712cf9;
     font-weight: 600;
     fill: white;
+    color: white;
 }
 
 .btn-bd-primary:hover {
-    background-color: #6528e0;     
-    color: white;                  
-    border-color: #6528e0;   
+    background-color: #6528e0;
+    color: white;
+    border-color: #6528e0;
 }
 
 .btn-bd-primary:active {
-    background-color: #5a23c8;      
-    color: white;                  
-    border-color: #5a23c8;   
+    background-color: #5a23c8;
+    color: white;
+    border-color: #5a23c8;
 }
 
 
@@ -449,7 +463,8 @@ ul {
     display: block !important;
 }
 
-.link-body-emphasis, .dropdown-menu {
+.link-body-emphasis,
+.dropdown-menu {
     fill: var(--svg-fill-color);
 }
 
@@ -462,3 +477,24 @@ ul {
     --svg-fill-color: white;
 }
 
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.check-icon {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-color: #82ce34;
+    border-radius: 50%;
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.modal-body h4 {
+    font-weight: 500;
+}

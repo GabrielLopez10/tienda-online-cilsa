@@ -5,11 +5,13 @@ import { setupMouseScroll } from "./modules/mouseScroll.js";
 import { setupModals } from "./modules/modals.js";
 import { setupCart } from "./modules/cart.js";
 import { setupCheckout } from "./modules/checkout.js";
+import { setupFormValidation } from "./modules/formValidation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   setupDropdown();
   setupScrollToTop();
   setupMouseScroll();
+  setupFormValidation();
   setupModals();
   setupCart();
   setupCheckout();
