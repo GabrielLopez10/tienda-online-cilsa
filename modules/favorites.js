@@ -32,9 +32,11 @@ function toggleFavorite(productId, productName, button) {
   const index = favorites.findIndex((f) => f.id === productId);
 
   if (index > -1) {
+    // si el producto esta en favorito, se elimina. (Index > -1) por lo tanto es un número válido
     favorites.splice(index, 1);
     button.classList.remove("active");
   } else {
+    // se agrega producto si no esta en favorito. (Index === -1) por lo tanto no es válido
     favorites.push({ id: productId, name: productName });
     button.classList.add("active");
   }
