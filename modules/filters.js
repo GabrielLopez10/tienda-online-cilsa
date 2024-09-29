@@ -72,14 +72,14 @@ function toggleSidebar() {
 }
 
 export function sidebarToggle() {
-  setupFilters(); // This loads the filters
+  setupFilters(); 
   const sidebarToggle = document.getElementById("sidebarToggle");
 
-  // Check if the sidebar toggle button exists and add the event listener
+
   if (sidebarToggle) {
     sidebarToggle.addEventListener("click", () => {
-      console.log("Toggle button clicked!"); // Debugging log
-      toggleSidebar(); // Toggle the sidebar visibility
+      console.log("Toggle button clicked!"); 
+      toggleSidebar(); 
     });
   } else {
     console.error("Sidebar toggle button not found!");
