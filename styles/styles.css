@@ -498,3 +498,38 @@ ul {
 .modal-body h4 {
     font-weight: 500;
 }
+
+@media (max-width: 768px) {
+    #sidebar-filter {
+      position: fixed;
+      top: 15%;
+      height: 100vh;
+      width: 170px; 
+      transition: left 0.3s ease;
+      z-index: 1;
+    }
+  
+    #sidebar-filter.show {
+      left: 0; 
+    }
+   
+    #main-content.active {
+      padding-left: 170px;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    #sidebar-filter {
+      position: fixed;
+      left: 0;
+      top: 15%;  
+      width: auto;
+    }
+  }
+
+
+  @media (min-width: 768px) and (max-width: 1920px) {
+    #main-content.active {
+        padding-left: 220px;
+      }
+  }
