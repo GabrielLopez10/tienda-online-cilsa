@@ -1,0 +1,16 @@
+{
+    "categories": [
+      {
+        "title": "Fabricante",
+        "options": ["Canon", "Lenovo", "Sony", "Samsung","renault"]
+      },
+      {
+        "title": "Linea",
+        "options": ["EOS", "Alpha", "Cyber-shot"]
+      },
+      {
+        "title": "Color",
+        "options": ["Negro", "Blanco", "Plata"]
+      }
+    ]
+  }
