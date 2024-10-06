@@ -6,7 +6,7 @@ import { setupModals } from "./modules/modals.js";
 import { setupCart } from "./modules/cart.js";
 import { setupCheckout } from "./modules/checkout.js";
 import { setupFormValidation } from "./modules/formValidation.js";
-import { sidebarToggle} from "./modules/filters.js";
+import { initializeShop } from "./modules/shop.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,5 +18,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCart();
   setupCheckout();
   favoritesSystem();
-  /* sidebarToggle(); */
+  initializeShop();
 });
