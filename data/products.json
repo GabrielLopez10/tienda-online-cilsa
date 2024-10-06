@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": 8,
+      "name": "Renault Megane E-tech Eléctrico",
+      "image": "assets/images/megane1.jpg",
+      "description": "El nuevo Megane E-Tech se presenta con un innovador diseño crossover deportivo, pensado para los conductores más exigentes.",
+      "oldPrice": 68850000,
+      "newPrice": 67500000,
+      "rating": 3.5,
+      "categories": {
+        "fabricante": "renault",
+        "linea": "megane",
+        "color": "azul nocturno",
+        "tipo": "vehiculo"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Ram 1500 5.7 Dc 4×4 Laramie Night Edition",
+      "image": "assets/images/ram1.jpg",
+      "description": "Laramie Night Edition: una nueva configuración que redefine su carácter y destaca visualmente por su aspecto deportivo.",
+      "oldPrice": 56900000,
+      "newPrice": 55870000,
+      "rating": 4.5,
+      "categories": {
+        "fabricante": "ram",
+        "linea": "1500",
+        "color": "negro",
+        "tipo": "vehiculo"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Fiat Cronos 1.3 Gse Stile",
+      "image": "assets/images/fiat1.jpg",
+      "description": "El nuevo Fiat Cronos te ofrece un diseño renovado con líneas de figura, diseño italiano, aspecto deportivo y atrevido que llama la atención en todos lados.",
+      "oldPrice": 24556000,
+      "newPrice": 23856000,
+      "rating": 3.5,
+      "categories": {
+        "fabricante": "fiat",
+        "linea": "cronos",
+        "color": "negro",
+        "tipo": "vehiculo"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Renault Sandero 1.6 16v Life",
+      "image": "assets/images/renault1.jpg",
+      "description": "El Nuevo Renault Sandero brinda confort a todos los pasajeros. Las butacas y el volante se ajustan de acuerdo a tu estilo de conducción. Baúl de 320 L, el más grande de la categoría, llave navaja con apertura electrónica de baúl y climatizador.",
+      "oldPrice": 23350000,
+      "newPrice": 22750000,
+      "rating": 3.0,
+      "categories": {
+        "fabricante": "renault",
+        "linea": "sandero",
+        "color": "gris",
+        "tipo": "vehiculo"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Samsung Galaxy S21 Ultra 5g 256 Gb Phantom Black 12 Gb Ram",
+      "image": "assets/images/samsung4.webp",
+      "description": "El Samsung Galaxy S21 Ultra 5G es el celular perfecto para aquellos que buscan lo último en tecnología y rendimiento.",
+      "oldPrice": 1351749,
+      "newPrice": 1151749,
+      "rating": 4.3,
+      "categories": {
+        "fabricante": "samsung",
+        "linea": "s21",
+        "color": "negro",
+        "tipo": "tech"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Playstation 5 Sony Ps5 Standard Edition",
+      "image": "assets/images/ps5-3.webp",
+      "description": "La Playstation 5 Standard Edition es la última generación de consolas de Sony. Este modelo ofrece una experiencia de juego inigualable gracias a su potente hardware.",
+      "oldPrice": 1714999,
+      "newPrice": 1154999,
+      "rating": 4.3,
+      "categories": {
+        "fabricante": "sony",
+        "linea": "playstation",
+        "color": "blanco",
+        "tipo": "tech"
+      }
+    },
+    {
+      "id": 1,
+      "name": "Canon EOS 1500D",
+      "image": "assets/images/1651_4_z_532x399.jpg",
+      "description": "La marca japonesa Canon combina calidad y rendimiento en sus productos. No importa si recién comenzás en el mundo de la fotografía o si querés mejorar tu equipo, Canon hará que te enamores de la fotografía.",
+      "oldPrice": 1285000,
+      "newPrice": 1235000,
+      "rating": 4.1,
+      "categories": {
+        "fabricante": "canon",
+        "linea": "eos",
+        "color": "negro",
+        "tipo": "tech"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Lenovo AMD Ryzen5-7520U 256gb 8gb 14\" Win11 Pro",
+      "image": "assets/images/Notebook-Lenovo-V14-Business-Black-Aslan-Store-1_cropped.webp",
+      "description": "Ya sea que estés ejecutando una hoja de cálculo, participando en una conferencia web, gestionando archivos o abordando otros trabajos, la Lenovo V14 de 14″ Ryzen 5 se ocupará de tus necesidades de manera eficiente.",
+      "oldPrice": 1143999,
+      "newPrice": 1093999,
+      "rating": 4.6,
+      "categories": {
+        "fabricante": "lenovo",
+        "linea": "v14",
+        "color": "negro",
+        "tipo": "tech"
+      }
+    }
+  ]
+}
