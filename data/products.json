@@ -8,6 +8,7 @@
       "oldPrice": 68850000,
       "newPrice": 67500000,
       "rating": 3.5,
+      "featured": false,
       "categories": {
         "fabricante": "renault",
         "linea": "megane",
@@ -23,6 +24,7 @@
       "oldPrice": 56900000,
       "newPrice": 55870000,
       "rating": 4.5,
+      "featured": true,
       "categories": {
         "fabricante": "ram",
         "linea": "1500",
@@ -38,6 +40,7 @@
       "oldPrice": 24556000,
       "newPrice": 23856000,
       "rating": 3.5,
+      "featured": false,
       "categories": {
         "fabricante": "fiat",
         "linea": "cronos",
@@ -53,6 +56,7 @@
       "oldPrice": 23350000,
       "newPrice": 22750000,
       "rating": 3.0,
+      "featured": false,
       "categories": {
         "fabricante": "renault",
         "linea": "sandero",
@@ -68,6 +72,7 @@
       "oldPrice": 1351749,
       "newPrice": 1151749,
       "rating": 4.3,
+      "featured": false,
       "categories": {
         "fabricante": "samsung",
         "linea": "s21",
@@ -83,6 +88,7 @@
       "oldPrice": 1714999,
       "newPrice": 1154999,
       "rating": 4.3,
+      "featured": true,
       "categories": {
         "fabricante": "sony",
         "linea": "playstation",
@@ -98,6 +104,7 @@
       "oldPrice": 1285000,
       "newPrice": 1235000,
       "rating": 4.1,
+      "featured": true,
       "categories": {
         "fabricante": "canon",
         "linea": "eos",
@@ -113,6 +120,7 @@
       "oldPrice": 1143999,
       "newPrice": 1093999,
       "rating": 4.6,
+      "featured": true,
       "categories": {
         "fabricante": "lenovo",
         "linea": "v14",
